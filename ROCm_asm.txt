@@ -1,0 +1,2554 @@
+/* Disassembling 'sha256-rocm.bin' */
+.rocm
+.gpu Fiji
+.arch_minor 0
+.arch_stepping 3
+.eflags 42
+.newbinfmt
+.target "amdgcn-amd-amdhsa--gfx803"
+.globaldata
+.gdata:
+    .byte 0x98, 0x2f, 0x8a, 0x42, 0x91, 0x44, 0x37, 0x71
+    .byte 0xcf, 0xfb, 0xc0, 0xb5, 0xa5, 0xdb, 0xb5, 0xe9
+    .byte 0x5b, 0xc2, 0x56, 0x39, 0xf1, 0x11, 0xf1, 0x59
+    .byte 0xa4, 0x82, 0x3f, 0x92, 0xd5, 0x5e, 0x1c, 0xab
+    .byte 0x98, 0xaa, 0x07, 0xd8, 0x01, 0x5b, 0x83, 0x12
+    .byte 0xbe, 0x85, 0x31, 0x24, 0xc3, 0x7d, 0x0c, 0x55
+    .byte 0x74, 0x5d, 0xbe, 0x72, 0xfe, 0xb1, 0xde, 0x80
+    .byte 0xa7, 0x06, 0xdc, 0x9b, 0x74, 0xf1, 0x9b, 0xc1
+    .byte 0xc1, 0x69, 0x9b, 0xe4, 0x86, 0x47, 0xbe, 0xef
+    .byte 0xc6, 0x9d, 0xc1, 0x0f, 0xcc, 0xa1, 0x0c, 0x24
+    .byte 0x6f, 0x2c, 0xe9, 0x2d, 0xaa, 0x84, 0x74, 0x4a
+    .byte 0xdc, 0xa9, 0xb0, 0x5c, 0xda, 0x88, 0xf9, 0x76
+    .byte 0x52, 0x51, 0x3e, 0x98, 0x6d, 0xc6, 0x31, 0xa8
+    .byte 0xc8, 0x27, 0x03, 0xb0, 0xc7, 0x7f, 0x59, 0xbf
+    .byte 0xf3, 0x0b, 0xe0, 0xc6, 0x47, 0x91, 0xa7, 0xd5
+    .byte 0x51, 0x63, 0xca, 0x06, 0x67, 0x29, 0x29, 0x14
+    .byte 0x85, 0x0a, 0xb7, 0x27, 0x38, 0x21, 0x1b, 0x2e
+    .byte 0xfc, 0x6d, 0x2c, 0x4d, 0x13, 0x0d, 0x38, 0x53
+    .byte 0x54, 0x73, 0x0a, 0x65, 0xbb, 0x0a, 0x6a, 0x76
+    .byte 0x2e, 0xc9, 0xc2, 0x81, 0x85, 0x2c, 0x72, 0x92
+    .byte 0xa1, 0xe8, 0xbf, 0xa2, 0x4b, 0x66, 0x1a, 0xa8
+    .byte 0x70, 0x8b, 0x4b, 0xc2, 0xa3, 0x51, 0x6c, 0xc7
+    .byte 0x19, 0xe8, 0x92, 0xd1, 0x24, 0x06, 0x99, 0xd6
+    .byte 0x85, 0x35, 0x0e, 0xf4, 0x70, 0xa0, 0x6a, 0x10
+    .byte 0x16, 0xc1, 0xa4, 0x19, 0x08, 0x6c, 0x37, 0x1e
+    .byte 0x4c, 0x77, 0x48, 0x27, 0xb5, 0xbc, 0xb0, 0x34
+    .byte 0xb3, 0x0c, 0x1c, 0x39, 0x4a, 0xaa, 0xd8, 0x4e
+    .byte 0x4f, 0xca, 0x9c, 0x5b, 0xf3, 0x6f, 0x2e, 0x68
+    .byte 0xee, 0x82, 0x8f, 0x74, 0x6f, 0x63, 0xa5, 0x78
+    .byte 0x14, 0x78, 0xc8, 0x84, 0x08, 0x02, 0xc7, 0x8c
+    .byte 0xfa, 0xff, 0xbe, 0x90, 0xeb, 0x6c, 0x50, 0xa4
+    .byte 0xf7, 0xa3, 0xf9, 0xbe, 0xf2, 0x78, 0x71, 0xc6
+.md_version 1, 0
+.kernel sha256_crypt_kernel
+    .config
+        .dims x
+        .sgprsnum 102
+        .vgprsnum 48
+        .dx10clamp
+        .ieeemode
+        .floatmode 0xc0
+        .priority 0
+        .userdatanum 8
+        .pgmrsrc1 0x00ac030b
+        .pgmrsrc2 0x00000091
+        .codeversion 1, 2
+        .machine 1, 8, 0, 3
+        .kernel_code_entry_offset 0x100
+        .use_private_segment_buffer
+        .use_kernarg_segment_ptr
+        .use_flat_scratch_init
+        .private_elem_size 4
+        .use_ptr64
+        .workitem_private_segment_size 324
+        .kernarg_segment_size 80
+        .wavefront_sgpr_count 98
+        .workitem_vgpr_count 46
+        .kernarg_segment_align 16
+        .group_segment_align 16
+        .private_segment_align 16
+        .wavefront_size 64
+        .call_convention 0xffffffff
+    .control_directive
+        .fill 128, 1, 0x00
+    .config
+        .md_symname "sha256_crypt_kernel@kd"
+        .md_language "OpenCL C", 1, 2
+        .md_kernarg_segment_size 80
+        .md_kernarg_segment_align 8
+        .md_group_segment_fixed_size 0
+        .md_private_segment_fixed_size 324
+        .md_wavefront_size 64
+        .md_sgprsnum 98
+        .md_vgprsnum 46
+        .max_flat_work_group_size 256
+        .arg data_info, "uint*", 8, 8, globalbuf, struct, global, default
+        .arg plain_key, "char*", 8, 8, globalbuf, struct, global, default
+        .arg digest, "uint*", 8, 8, globalbuf, struct, global, default
+        .arg , "", 8, 8, gox, struct
+        .arg , "", 8, 8, goy, struct
+        .arg , "", 8, 8, goz, struct
+        .arg , "", 8, 8, none, struct
+        .arg , "", 8, 8, none, struct
+        .arg , "", 8, 8, none, struct
+        .arg , "", 8, 8, multigridsyncarg, struct
+.text
+sha256_crypt_kernel:
+.skip 256
+/*000000000100*/ s_add_u32       s6, s6, s9
+/*000000000104*/ s_lshr_b32      flat_scratch_hi, s6, 8
+/*000000000108*/ s_add_u32       s0, s0, s9
+/*00000000010c*/ s_mov_b32       flat_scratch_lo, s7
+/*000000000110*/ s_load_dwordx4  s[8:11], s[4:5], 0x0
+/*000000000118*/ s_load_dwordx4  s[4:7], s[4:5], 0x10
+/*000000000120*/ s_addc_u32      s1, s1, 0
+/*000000000124*/ v_mov_b32       v0, 0x6a09e667
+/*00000000012c*/ v_mov_b32       v1, 0xbb67ae85
+/*000000000134*/ s_waitcnt       lgkmcnt(0)
+/*000000000138*/ s_load_dword    s6, s[8:9], 0x8
+/*000000000140*/ v_mov_b32       v4, s4
+/*000000000144*/ v_mov_b32       v2, 0x3c6ef372
+/*00000000014c*/ v_mov_b32       v3, 0xa54ff53a
+/*000000000154*/ v_mov_b32       v5, s5
+/*000000000158*/ s_waitcnt       lgkmcnt(0)
+/*00000000015c*/ s_lshr_b32      s7, s6, 6
+/*000000000160*/ s_and_b32       s14, s6, 63
+/*000000000164*/ s_add_i32       s7, s7, 1
+/*000000000168*/ s_cmp_lt_u32    s14, 56
+/*00000000016c*/ s_cselect_b32   s7, s7, 2
+/*000000000170*/ s_add_u32       s8, s4, 16
+/*000000000174*/ s_addc_u32      s9, s5, 0
+/*000000000178*/ v_mov_b32       v8, s8
+/*00000000017c*/ flat_store_dwordx4 v[4:5], v[0:3]
+/*000000000184*/ v_mov_b32       v4, 0x510e527f
+/*00000000018c*/ v_mov_b32       v5, 0x9b05688c
+/*000000000194*/ v_mov_b32       v6, 0x1f83d9ab
+/*00000000019c*/ v_mov_b32       v7, 0x5be0cd19
+/*0000000001a4*/ v_mov_b32       v9, s9
+/*0000000001a8*/ flat_store_dwordx4 v[8:9], v[4:7]
+/*0000000001b0*/ s_mov_b32       s12, 0
+/*0000000001b4*/ s_lshl_b32      s13, s6, 3
+/*0000000001b8*/ v_mov_b32       v8, 0
+/*0000000001bc*/ v_cmp_eq_u32    s[14:15], s14, 0
+/*0000000001c4*/ v_bfrev_b32     v9, 1
+/*0000000001c8*/ s_mov_b32       s16, 0xff0000
+/*0000000001d0*/ v_mov_b32       v10, 4
+/*0000000001d4*/ s_mov_b32       s17, 0x428a2f98
+/*0000000001dc*/ s_mov_b32       s18, 0x71374491
+/*0000000001e4*/ s_mov_b32       s19, 0xb5c0fbcf
+/*0000000001ec*/ s_mov_b32       s20, 0xe9b5dba5
+/*0000000001f4*/ s_mov_b32       s21, 0x3956c25b
+/*0000000001fc*/ s_mov_b32       s22, 0x59f111f1
+/*000000000204*/ s_mov_b32       s23, 0x923f82a4
+/*00000000020c*/ s_mov_b32       s24, 0xab1c5ed5
+/*000000000214*/ s_mov_b32       s25, 0xd807aa98
+/*00000000021c*/ s_mov_b32       s26, 0x12835b01
+/*000000000224*/ s_mov_b32       s27, 0x243185be
+/*00000000022c*/ s_mov_b32       s28, 0x550c7dc3
+/*000000000234*/ s_mov_b32       s29, 0x72be5d74
+/*00000000023c*/ s_mov_b32       s30, 0x80deb1fe
+/*000000000244*/ s_mov_b32       s31, 0x9bdc06a7
+/*00000000024c*/ s_mov_b32       s33, 0xc19bf174
+/*000000000254*/ s_mov_b32       s34, 0xe49b69c1
+/*00000000025c*/ s_mov_b32       s35, 0xefbe4786
+/*000000000264*/ s_mov_b32       s36, 0xfc19dc6
+/*00000000026c*/ s_mov_b32       s37, 0x240ca1cc
+/*000000000274*/ s_mov_b32       s38, 0x2de92c6f
+/*00000000027c*/ s_mov_b32       s39, 0x4a7484aa
+/*000000000284*/ s_mov_b32       s40, 0x5cb0a9dc
+/*00000000028c*/ s_mov_b32       s41, 0x76f988da
+/*000000000294*/ s_mov_b32       s42, 0x983e5152
+/*00000000029c*/ s_mov_b32       s43, 0xa831c66d
+/*0000000002a4*/ s_mov_b32       s44, 0xb00327c8
+/*0000000002ac*/ s_mov_b32       s45, 0xbf597fc7
+/*0000000002b4*/ s_mov_b32       s46, 0xc6e00bf3
+/*0000000002bc*/ s_mov_b32       s47, 0xd5a79147
+/*0000000002c4*/ s_mov_b32       s48, 0x6ca6351
+/*0000000002cc*/ s_mov_b32       s49, 0x14292967
+/*0000000002d4*/ s_mov_b32       s50, 0x27b70a85
+/*0000000002dc*/ s_mov_b32       s51, 0x2e1b2138
+/*0000000002e4*/ s_mov_b32       s52, 0x4d2c6dfc
+/*0000000002ec*/ s_mov_b32       s53, 0x53380d13
+/*0000000002f4*/ s_mov_b32       s54, 0x650a7354
+/*0000000002fc*/ s_mov_b32       s55, 0x766a0abb
+/*000000000304*/ s_mov_b32       s56, 0x81c2c92e
+/*00000000030c*/ s_mov_b32       s57, 0x92722c85
+/*000000000314*/ s_mov_b32       s58, 0xa2bfe8a1
+/*00000000031c*/ s_mov_b32       s59, 0xa81a664b
+/*000000000324*/ s_mov_b32       s60, 0xc24b8b70
+/*00000000032c*/ s_mov_b32       s61, 0xc76c51a3
+/*000000000334*/ s_mov_b32       s62, 0xd192e819
+/*00000000033c*/ v_mov_b32       v11, 8
+/*000000000340*/ s_mov_b32       s63, 0xd6990624
+/*000000000348*/ s_mov_b32       s64, 0xf40e3585
+/*000000000350*/ s_mov_b32       s65, 0x106aa070
+/*000000000358*/ s_mov_b32       s66, 0x19a4c116
+/*000000000360*/ s_mov_b32       s67, 0x1e376c08
+/*000000000368*/ s_mov_b32       s68, 0x2748774c
+/*000000000370*/ s_mov_b32       s69, 0x34b0bcb5
+/*000000000378*/ s_mov_b32       s70, 0x391c0cb3
+/*000000000380*/ s_mov_b32       s71, 0x4ed8aa4a
+/*000000000388*/ s_mov_b32       s72, 0x5b9cca4f
+/*000000000390*/ s_mov_b32       s73, 0x682e6ff3
+/*000000000398*/ s_mov_b32       s74, 0x748f82ee
+/*0000000003a0*/ s_mov_b32       s75, 0x78a5636f
+/*0000000003a8*/ s_mov_b32       s76, 0x84c87814
+/*0000000003b0*/ s_mov_b32       s77, 0x8cc70208
+/*0000000003b8*/ s_mov_b32       s78, 0x90befffa
+/*0000000003c0*/ s_mov_b32       s79, 0xa4506ceb
+/*0000000003c8*/ s_mov_b32       s80, 0xbef9a3f7
+/*0000000003d0*/ s_mov_b32       s81, 0xc67178f2
+/*0000000003d8*/ s_mov_b32       s82, 0
+/*0000000003dc*/ s_branch        .L12336_0
+.L992_0:
+/*0000000003e0*/ buffer_load_dword v19, v0, s[0:3], 0 offset:4
+/*0000000003e8*/ buffer_load_dword v22, v0, s[0:3], 0 offset:8
+/*0000000003f0*/ buffer_load_dword v25, v0, s[0:3], 0 offset:12
+/*0000000003f8*/ buffer_load_dword v26, v0, s[0:3], 0 offset:16
+/*000000000400*/ buffer_load_dword v27, v0, s[0:3], 0 offset:20
+/*000000000408*/ buffer_load_dword v20, v0, s[0:3], 0 offset:24
+/*000000000410*/ buffer_load_dword v17, v0, s[0:3], 0 offset:28
+/*000000000418*/ buffer_load_dword v14, v0, s[0:3], 0 offset:32
+/*000000000420*/ v_alignbit_b32  v12, v4, v4, 6
+/*000000000428*/ v_alignbit_b32  v13, v4, v4, 11
+/*000000000430*/ v_alignbit_b32  v15, v4, v4, 25
+/*000000000438*/ v_xor_b32       v12, v12, v13
+/*00000000043c*/ v_bfi_b32       v16, v4, v5, v6
+/*000000000444*/ v_add_u32       v13, vcc, v16, v7
+/*000000000448*/ v_xor_b32       v12, v12, v15
+/*00000000044c*/ v_add_u32       v12, vcc, v13, v12
+/*000000000450*/ v_alignbit_b32  v18, v0, v0, 2
+/*000000000458*/ v_alignbit_b32  v21, v0, v0, 13
+/*000000000460*/ v_xor_b32       v24, v1, v2
+/*000000000464*/ v_xor_b32       v16, v18, v21
+/*000000000468*/ v_alignbit_b32  v23, v0, v0, 22
+/*000000000470*/ v_and_b32       v28, v1, v2
+/*000000000474*/ v_and_b32       v18, v24, v0
+/*000000000478*/ v_xor_b32       v15, v16, v23
+/*00000000047c*/ v_xor_b32       v16, v18, v28
+/*000000000480*/ v_add_u32       v13, vcc, v15, v16
+/*000000000484*/ v_xor_b32       v29, v0, v1
+/*000000000488*/ v_and_b32       v30, v0, v1
+/*00000000048c*/ s_add_i32       s82, s82, 1
+/*000000000490*/ s_add_i32       s12, s12, 64
+/*000000000494*/ s_cmp_ge_u32    s82, s7
+/*000000000498*/ s_waitcnt       vmcnt(7)
+/*00000000049c*/ v_add_u32       v12, vcc, v12, v19
+/*0000000004a0*/ v_add_u32       v12, vcc, s17, v12
+/*0000000004a4*/ v_add_u32       v15, vcc, v12, v3
+/*0000000004a8*/ v_add_u32       v12, vcc, v13, v12
+/*0000000004ac*/ v_alignbit_b32  v13, v15, v15, 6
+/*0000000004b4*/ v_alignbit_b32  v16, v15, v15, 11
+/*0000000004bc*/ v_alignbit_b32  v18, v15, v15, 25
+/*0000000004c4*/ v_xor_b32       v13, v13, v16
+/*0000000004c8*/ v_bfi_b32       v21, v15, v4, v5
+/*0000000004d0*/ v_add_u32       v16, vcc, v21, v6
+/*0000000004d4*/ v_xor_b32       v13, v13, v18
+/*0000000004d8*/ v_add_u32       v13, vcc, v16, v13
+/*0000000004dc*/ v_alignbit_b32  v23, v12, v12, 2
+/*0000000004e4*/ v_alignbit_b32  v24, v12, v12, 13
+/*0000000004ec*/ s_waitcnt       vmcnt(6)
+/*0000000004f0*/ v_add_u32       v13, vcc, v13, v22
+/*0000000004f4*/ v_alignbit_b32  v28, v12, v12, 22
+/*0000000004fc*/ v_xor_b32       v21, v23, v24
+/*000000000500*/ v_and_b32       v29, v12, v29
+/*000000000504*/ v_xor_b32       v23, v29, v30
+/*000000000508*/ v_xor_b32       v18, v21, v28
+/*00000000050c*/ v_add_u32       v13, vcc, s18, v13
+/*000000000510*/ v_add_u32       v16, vcc, v18, v23
+/*000000000514*/ v_add_u32       v18, vcc, v13, v2
+/*000000000518*/ v_add_u32       v13, vcc, v16, v13
+/*00000000051c*/ v_alignbit_b32  v16, v18, v18, 6
+/*000000000524*/ v_alignbit_b32  v21, v18, v18, 11
+/*00000000052c*/ v_alignbit_b32  v23, v18, v18, 25
+/*000000000534*/ v_xor_b32       v16, v16, v21
+/*000000000538*/ v_bfi_b32       v24, v18, v15, v4
+/*000000000540*/ v_add_u32       v21, vcc, v24, v5
+/*000000000544*/ v_xor_b32       v16, v16, v23
+/*000000000548*/ v_xor_b32       v31, v12, v0
+/*00000000054c*/ v_add_u32       v16, vcc, v21, v16
+/*000000000550*/ v_alignbit_b32  v28, v13, v13, 2
+/*000000000558*/ v_alignbit_b32  v29, v13, v13, 13
+/*000000000560*/ s_waitcnt       vmcnt(5)
+/*000000000564*/ v_add_u32       v16, vcc, v16, v25
+/*000000000568*/ v_xor_b32       v24, v28, v29
+/*00000000056c*/ v_alignbit_b32  v30, v13, v13, 22
+/*000000000574*/ v_and_b32       v32, v12, v0
+/*000000000578*/ v_and_b32       v31, v31, v13
+/*00000000057c*/ v_xor_b32       v28, v31, v32
+/*000000000580*/ v_xor_b32       v23, v24, v30
+/*000000000584*/ v_add_u32       v16, vcc, s19, v16
+/*000000000588*/ v_add_u32       v21, vcc, v23, v28
+/*00000000058c*/ v_add_u32       v23, vcc, v16, v1
+/*000000000590*/ v_add_u32       v16, vcc, v21, v16
+/*000000000594*/ v_alignbit_b32  v21, v23, v23, 6
+/*00000000059c*/ v_alignbit_b32  v24, v23, v23, 11
+/*0000000005a4*/ v_xor_b32       v21, v21, v24
+/*0000000005a8*/ v_bfi_b32       v24, v23, v18, v15
+/*0000000005b0*/ v_alignbit_b32  v28, v23, v23, 25
+/*0000000005b8*/ v_xor_b32       v21, v21, v28
+/*0000000005bc*/ v_add_u32       v24, vcc, v24, v4
+/*0000000005c0*/ v_add_u32       v21, vcc, v24, v21
+/*0000000005c4*/ v_alignbit_b32  v24, v16, v16, 2
+/*0000000005cc*/ v_alignbit_b32  v28, v16, v16, 13
+/*0000000005d4*/ v_xor_b32       v24, v24, v28
+/*0000000005d8*/ v_alignbit_b32  v28, v16, v16, 22
+/*0000000005e0*/ v_xor_b32       v24, v24, v28
+/*0000000005e4*/ v_xor_b32       v28, v13, v12
+/*0000000005e8*/ s_waitcnt       vmcnt(4)
+/*0000000005ec*/ v_add_u32       v21, vcc, v21, v26
+/*0000000005f0*/ v_and_b32       v28, v16, v28
+/*0000000005f4*/ v_and_b32       v29, v13, v12
+/*0000000005f8*/ v_xor_b32       v28, v28, v29
+/*0000000005fc*/ v_add_u32       v21, vcc, s20, v21
+/*000000000600*/ v_add_u32       v24, vcc, v24, v28
+/*000000000604*/ v_add_u32       v28, vcc, v21, v0
+/*000000000608*/ v_add_u32       v21, vcc, v24, v21
+/*00000000060c*/ v_alignbit_b32  v24, v28, v28, 6
+/*000000000614*/ v_alignbit_b32  v29, v28, v28, 11
+/*00000000061c*/ v_xor_b32       v24, v24, v29
+/*000000000620*/ v_alignbit_b32  v29, v28, v28, 25
+/*000000000628*/ v_xor_b32       v24, v24, v29
+/*00000000062c*/ v_bfi_b32       v29, v28, v23, v18
+/*000000000634*/ v_add_u32       v15, vcc, v29, v15
+/*000000000638*/ v_add_u32       v15, vcc, v15, v24
+/*00000000063c*/ v_alignbit_b32  v24, v21, v21, 2
+/*000000000644*/ v_alignbit_b32  v29, v21, v21, 13
+/*00000000064c*/ v_xor_b32       v24, v24, v29
+/*000000000650*/ v_alignbit_b32  v29, v21, v21, 22
+/*000000000658*/ v_xor_b32       v24, v24, v29
+/*00000000065c*/ v_xor_b32       v29, v16, v13
+/*000000000660*/ s_waitcnt       vmcnt(3)
+/*000000000664*/ v_add_u32       v15, vcc, v15, v27
+/*000000000668*/ v_and_b32       v29, v29, v21
+/*00000000066c*/ v_and_b32       v30, v16, v13
+/*000000000670*/ v_xor_b32       v29, v29, v30
+/*000000000674*/ v_add_u32       v15, vcc, s21, v15
+/*000000000678*/ v_add_u32       v24, vcc, v24, v29
+/*00000000067c*/ v_add_u32       v12, vcc, v15, v12
+/*000000000680*/ v_add_u32       v29, vcc, v24, v15
+/*000000000684*/ v_alignbit_b32  v15, v12, v12, 6
+/*00000000068c*/ v_alignbit_b32  v24, v12, v12, 11
+/*000000000694*/ v_xor_b32       v15, v15, v24
+/*000000000698*/ v_alignbit_b32  v24, v12, v12, 25
+/*0000000006a0*/ v_xor_b32       v15, v15, v24
+/*0000000006a4*/ v_bfi_b32       v24, v12, v28, v23
+/*0000000006ac*/ v_add_u32       v18, vcc, v24, v18
+/*0000000006b0*/ v_add_u32       v15, vcc, v18, v15
+/*0000000006b4*/ v_alignbit_b32  v18, v29, v29, 2
+/*0000000006bc*/ v_alignbit_b32  v24, v29, v29, 13
+/*0000000006c4*/ v_xor_b32       v18, v18, v24
+/*0000000006c8*/ v_alignbit_b32  v24, v29, v29, 22
+/*0000000006d0*/ v_xor_b32       v18, v18, v24
+/*0000000006d4*/ v_xor_b32       v24, v21, v16
+/*0000000006d8*/ s_waitcnt       vmcnt(2)
+/*0000000006dc*/ v_add_u32       v15, vcc, v15, v20
+/*0000000006e0*/ v_and_b32       v24, v29, v24
+/*0000000006e4*/ v_and_b32       v30, v21, v16
+/*0000000006e8*/ v_add_u32       v15, vcc, s22, v15
+/*0000000006ec*/ v_xor_b32       v24, v24, v30
+/*0000000006f0*/ v_add_u32       v18, vcc, v18, v24
+/*0000000006f4*/ v_add_u32       v13, vcc, v15, v13
+/*0000000006f8*/ v_add_u32       v30, vcc, v18, v15
+/*0000000006fc*/ v_alignbit_b32  v15, v13, v13, 6
+/*000000000704*/ v_alignbit_b32  v18, v13, v13, 11
+/*00000000070c*/ v_xor_b32       v15, v15, v18
+/*000000000710*/ v_alignbit_b32  v18, v13, v13, 25
+/*000000000718*/ v_xor_b32       v15, v15, v18
+/*00000000071c*/ v_bfi_b32       v18, v13, v12, v28
+/*000000000724*/ v_add_u32       v18, vcc, v18, v23
+/*000000000728*/ v_add_u32       v15, vcc, v18, v15
+/*00000000072c*/ v_alignbit_b32  v18, v30, v30, 2
+/*000000000734*/ v_alignbit_b32  v23, v30, v30, 13
+/*00000000073c*/ v_xor_b32       v18, v18, v23
+/*000000000740*/ v_alignbit_b32  v23, v30, v30, 22
+/*000000000748*/ v_xor_b32       v18, v18, v23
+/*00000000074c*/ v_xor_b32       v23, v29, v21
+/*000000000750*/ s_waitcnt       vmcnt(1)
+/*000000000754*/ v_add_u32       v15, vcc, v15, v17
+/*000000000758*/ v_and_b32       v23, v23, v30
+/*00000000075c*/ v_and_b32       v24, v29, v21
+/*000000000760*/ v_xor_b32       v23, v23, v24
+/*000000000764*/ v_add_u32       v15, vcc, s23, v15
+/*000000000768*/ v_add_u32       v18, vcc, v18, v23
+/*00000000076c*/ v_add_u32       v16, vcc, v15, v16
+/*000000000770*/ v_add_u32       v31, vcc, v18, v15
+/*000000000774*/ v_alignbit_b32  v15, v16, v16, 6
+/*00000000077c*/ v_alignbit_b32  v18, v16, v16, 11
+/*000000000784*/ v_xor_b32       v15, v15, v18
+/*000000000788*/ v_alignbit_b32  v18, v16, v16, 25
+/*000000000790*/ v_xor_b32       v15, v15, v18
+/*000000000794*/ v_bfi_b32       v18, v16, v13, v12
+/*00000000079c*/ v_add_u32       v18, vcc, v18, v28
+/*0000000007a0*/ v_add_u32       v15, vcc, v18, v15
+/*0000000007a4*/ v_alignbit_b32  v18, v31, v31, 2
+/*0000000007ac*/ v_alignbit_b32  v23, v31, v31, 13
+/*0000000007b4*/ v_xor_b32       v18, v18, v23
+/*0000000007b8*/ v_alignbit_b32  v23, v31, v31, 22
+/*0000000007c0*/ v_xor_b32       v18, v18, v23
+/*0000000007c4*/ v_xor_b32       v23, v30, v29
+/*0000000007c8*/ s_waitcnt       vmcnt(0)
+/*0000000007cc*/ v_add_u32       v15, vcc, v15, v14
+/*0000000007d0*/ v_and_b32       v23, v31, v23
+/*0000000007d4*/ v_and_b32       v24, v30, v29
+/*0000000007d8*/ v_add_u32       v15, vcc, s24, v15
+/*0000000007dc*/ v_xor_b32       v23, v23, v24
+/*0000000007e0*/ v_add_u32       v28, vcc, v15, v21
+/*0000000007e4*/ v_add_u32       v18, vcc, v18, v23
+/*0000000007e8*/ v_add_u32       v32, vcc, v18, v15
+/*0000000007ec*/ v_alignbit_b32  v15, v28, v28, 6
+/*0000000007f4*/ v_alignbit_b32  v18, v28, v28, 11
+/*0000000007fc*/ v_bfi_b32       v23, v28, v16, v13
+/*000000000804*/ v_alignbit_b32  v21, v28, v28, 25
+/*00000000080c*/ v_xor_b32       v15, v15, v18
+/*000000000810*/ v_alignbit_b32  v24, v32, v32, 2
+/*000000000818*/ v_alignbit_b32  v33, v32, v32, 13
+/*000000000820*/ v_xor_b32       v15, v15, v21
+/*000000000824*/ v_add_u32       v12, vcc, v23, v12
+/*000000000828*/ v_add_u32       v37, vcc, v12, v15
+/*00000000082c*/ v_alignbit_b32  v34, v32, v32, 22
+/*000000000834*/ v_xor_b32       v12, v24, v33
+/*000000000838*/ v_xor_b32       v35, v31, v30
+/*00000000083c*/ v_xor_b32       v33, v12, v34
+/*000000000840*/ v_and_b32       v36, v31, v30
+/*000000000844*/ v_and_b32       v12, v35, v32
+/*000000000848*/ v_xor_b32       v34, v12, v36
+/*00000000084c*/ buffer_load_dword v35, v0, s[0:3], 0 offset:36
+/*000000000854*/ buffer_load_dword v36, v0, s[0:3], 0 offset:40
+/*00000000085c*/ buffer_load_dword v24, v0, s[0:3], 0 offset:44
+/*000000000864*/ buffer_load_dword v23, v0, s[0:3], 0 offset:48
+/*00000000086c*/ buffer_load_dword v21, v0, s[0:3], 0 offset:52
+/*000000000874*/ buffer_load_dword v18, v0, s[0:3], 0 offset:56
+/*00000000087c*/ buffer_load_dword v15, v0, s[0:3], 0 offset:60
+/*000000000884*/ buffer_load_dword v12, v0, s[0:3], 0 offset:64
+/*00000000088c*/ v_add_u32       v33, vcc, v33, v34
+/*000000000890*/ v_and_b32       v38, v32, v31
+/*000000000894*/ s_waitcnt       vmcnt(7)
+/*000000000898*/ v_add_u32       v34, vcc, v37, v35
+/*00000000089c*/ v_add_u32       v34, vcc, s25, v34
+/*0000000008a0*/ v_add_u32       v29, vcc, v34, v29
+/*0000000008a4*/ v_add_u32       v33, vcc, v33, v34
+/*0000000008a8*/ v_alignbit_b32  v37, v29, v29, 6
+/*0000000008b0*/ v_alignbit_b32  v34, v29, v29, 11
+/*0000000008b8*/ v_xor_b32       v34, v37, v34
+/*0000000008bc*/ v_alignbit_b32  v37, v29, v29, 25
+/*0000000008c4*/ v_xor_b32       v34, v34, v37
+/*0000000008c8*/ v_bfi_b32       v37, v29, v28, v16
+/*0000000008d0*/ v_add_u32       v13, vcc, v37, v13
+/*0000000008d4*/ v_add_u32       v13, vcc, v13, v34
+/*0000000008d8*/ v_alignbit_b32  v37, v33, v33, 2
+/*0000000008e0*/ v_alignbit_b32  v34, v33, v33, 13
+/*0000000008e8*/ v_xor_b32       v34, v37, v34
+/*0000000008ec*/ v_alignbit_b32  v37, v33, v33, 22
+/*0000000008f4*/ v_xor_b32       v34, v34, v37
+/*0000000008f8*/ v_xor_b32       v37, v32, v31
+/*0000000008fc*/ v_and_b32       v37, v33, v37
+/*000000000900*/ s_waitcnt       vmcnt(6)
+/*000000000904*/ v_add_u32       v13, vcc, v13, v36
+/*000000000908*/ v_xor_b32       v37, v37, v38
+/*00000000090c*/ v_add_u32       v13, vcc, s26, v13
+/*000000000910*/ v_add_u32       v34, vcc, v34, v37
+/*000000000914*/ v_add_u32       v30, vcc, v13, v30
+/*000000000918*/ v_add_u32       v13, vcc, v34, v13
+/*00000000091c*/ v_alignbit_b32  v37, v30, v30, 6
+/*000000000924*/ v_alignbit_b32  v34, v30, v30, 11
+/*00000000092c*/ v_xor_b32       v34, v37, v34
+/*000000000930*/ v_alignbit_b32  v37, v30, v30, 25
+/*000000000938*/ v_xor_b32       v34, v34, v37
+/*00000000093c*/ v_bfi_b32       v37, v30, v29, v28
+/*000000000944*/ v_add_u32       v16, vcc, v37, v16
+/*000000000948*/ v_add_u32       v16, vcc, v16, v34
+/*00000000094c*/ v_alignbit_b32  v37, v13, v13, 2
+/*000000000954*/ v_alignbit_b32  v34, v13, v13, 13
+/*00000000095c*/ v_xor_b32       v34, v37, v34
+/*000000000960*/ v_alignbit_b32  v37, v13, v13, 22
+/*000000000968*/ v_xor_b32       v34, v34, v37
+/*00000000096c*/ v_xor_b32       v37, v33, v32
+/*000000000970*/ s_waitcnt       vmcnt(5)
+/*000000000974*/ v_add_u32       v16, vcc, v16, v24
+/*000000000978*/ v_and_b32       v37, v37, v13
+/*00000000097c*/ v_and_b32       v38, v33, v32
+/*000000000980*/ v_xor_b32       v37, v37, v38
+/*000000000984*/ v_add_u32       v16, vcc, s27, v16
+/*000000000988*/ v_add_u32       v34, vcc, v34, v37
+/*00000000098c*/ v_add_u32       v31, vcc, v16, v31
+/*000000000990*/ v_add_u32       v16, vcc, v34, v16
+/*000000000994*/ v_alignbit_b32  v37, v31, v31, 6
+/*00000000099c*/ v_alignbit_b32  v34, v31, v31, 11
+/*0000000009a4*/ v_xor_b32       v34, v37, v34
+/*0000000009a8*/ v_alignbit_b32  v37, v31, v31, 25
+/*0000000009b0*/ v_xor_b32       v34, v34, v37
+/*0000000009b4*/ v_bfi_b32       v37, v31, v30, v29
+/*0000000009bc*/ v_add_u32       v28, vcc, v37, v28
+/*0000000009c0*/ v_add_u32       v28, vcc, v28, v34
+/*0000000009c4*/ v_alignbit_b32  v37, v16, v16, 2
+/*0000000009cc*/ v_alignbit_b32  v34, v16, v16, 13
+/*0000000009d4*/ v_xor_b32       v34, v37, v34
+/*0000000009d8*/ v_alignbit_b32  v37, v16, v16, 22
+/*0000000009e0*/ v_xor_b32       v34, v34, v37
+/*0000000009e4*/ v_xor_b32       v37, v13, v33
+/*0000000009e8*/ s_waitcnt       vmcnt(4)
+/*0000000009ec*/ v_add_u32       v28, vcc, v28, v23
+/*0000000009f0*/ v_and_b32       v37, v16, v37
+/*0000000009f4*/ v_and_b32       v38, v13, v33
+/*0000000009f8*/ v_xor_b32       v37, v37, v38
+/*0000000009fc*/ v_add_u32       v28, vcc, s28, v28
+/*000000000a00*/ v_add_u32       v34, vcc, v34, v37
+/*000000000a04*/ v_add_u32       v32, vcc, v28, v32
+/*000000000a08*/ v_add_u32       v28, vcc, v34, v28
+/*000000000a0c*/ v_alignbit_b32  v37, v32, v32, 6
+/*000000000a14*/ v_alignbit_b32  v34, v32, v32, 11
+/*000000000a1c*/ v_xor_b32       v34, v37, v34
+/*000000000a20*/ v_alignbit_b32  v37, v32, v32, 25
+/*000000000a28*/ v_xor_b32       v34, v34, v37
+/*000000000a2c*/ v_bfi_b32       v37, v32, v31, v30
+/*000000000a34*/ v_add_u32       v29, vcc, v37, v29
+/*000000000a38*/ v_add_u32       v29, vcc, v29, v34
+/*000000000a3c*/ v_alignbit_b32  v37, v28, v28, 2
+/*000000000a44*/ v_alignbit_b32  v34, v28, v28, 13
+/*000000000a4c*/ v_xor_b32       v34, v37, v34
+/*000000000a50*/ v_alignbit_b32  v37, v28, v28, 22
+/*000000000a58*/ v_xor_b32       v34, v34, v37
+/*000000000a5c*/ v_xor_b32       v37, v16, v13
+/*000000000a60*/ s_waitcnt       vmcnt(3)
+/*000000000a64*/ v_add_u32       v29, vcc, v29, v21
+/*000000000a68*/ v_and_b32       v37, v37, v28
+/*000000000a6c*/ v_and_b32       v38, v16, v13
+/*000000000a70*/ v_xor_b32       v37, v37, v38
+/*000000000a74*/ v_add_u32       v29, vcc, s29, v29
+/*000000000a78*/ v_add_u32       v34, vcc, v34, v37
+/*000000000a7c*/ v_add_u32       v33, vcc, v29, v33
+/*000000000a80*/ v_add_u32       v29, vcc, v34, v29
+/*000000000a84*/ v_alignbit_b32  v37, v33, v33, 6
+/*000000000a8c*/ v_alignbit_b32  v34, v33, v33, 11
+/*000000000a94*/ v_xor_b32       v34, v37, v34
+/*000000000a98*/ v_alignbit_b32  v37, v33, v33, 25
+/*000000000aa0*/ v_xor_b32       v34, v34, v37
+/*000000000aa4*/ v_bfi_b32       v37, v33, v32, v31
+/*000000000aac*/ v_add_u32       v30, vcc, v37, v30
+/*000000000ab0*/ v_add_u32       v30, vcc, v30, v34
+/*000000000ab4*/ v_alignbit_b32  v37, v29, v29, 2
+/*000000000abc*/ v_alignbit_b32  v34, v29, v29, 13
+/*000000000ac4*/ v_xor_b32       v34, v37, v34
+/*000000000ac8*/ v_alignbit_b32  v37, v29, v29, 22
+/*000000000ad0*/ v_xor_b32       v34, v34, v37
+/*000000000ad4*/ v_xor_b32       v37, v28, v16
+/*000000000ad8*/ s_waitcnt       vmcnt(2)
+/*000000000adc*/ v_add_u32       v30, vcc, v30, v18
+/*000000000ae0*/ v_and_b32       v37, v29, v37
+/*000000000ae4*/ v_and_b32       v38, v28, v16
+/*000000000ae8*/ v_xor_b32       v37, v37, v38
+/*000000000aec*/ v_add_u32       v30, vcc, s30, v30
+/*000000000af0*/ v_add_u32       v34, vcc, v34, v37
+/*000000000af4*/ v_add_u32       v37, vcc, v30, v13
+/*000000000af8*/ v_add_u32       v30, vcc, v34, v30
+/*000000000afc*/ v_alignbit_b32  v13, v37, v37, 6
+/*000000000b04*/ v_alignbit_b32  v34, v37, v37, 11
+/*000000000b0c*/ v_xor_b32       v13, v13, v34
+/*000000000b10*/ v_alignbit_b32  v34, v37, v37, 25
+/*000000000b18*/ v_xor_b32       v13, v13, v34
+/*000000000b1c*/ v_bfi_b32       v34, v37, v33, v32
+/*000000000b24*/ v_add_u32       v31, vcc, v34, v31
+/*000000000b28*/ v_add_u32       v13, vcc, v31, v13
+/*000000000b2c*/ v_alignbit_b32  v34, v30, v30, 2
+/*000000000b34*/ v_alignbit_b32  v31, v30, v30, 13
+/*000000000b3c*/ v_xor_b32       v31, v34, v31
+/*000000000b40*/ v_alignbit_b32  v34, v30, v30, 22
+/*000000000b48*/ v_xor_b32       v31, v31, v34
+/*000000000b4c*/ v_xor_b32       v34, v29, v28
+/*000000000b50*/ s_waitcnt       vmcnt(1)
+/*000000000b54*/ v_add_u32       v13, vcc, v13, v15
+/*000000000b58*/ v_and_b32       v34, v34, v30
+/*000000000b5c*/ v_and_b32       v38, v29, v28
+/*000000000b60*/ v_xor_b32       v34, v34, v38
+/*000000000b64*/ v_add_u32       v13, vcc, s31, v13
+/*000000000b68*/ v_add_u32       v31, vcc, v31, v34
+/*000000000b6c*/ v_add_u32       v34, vcc, v13, v16
+/*000000000b70*/ v_add_u32       v31, vcc, v31, v13
+/*000000000b74*/ v_alignbit_b32  v16, v34, v34, 6
+/*000000000b7c*/ v_alignbit_b32  v13, v34, v34, 11
+/*000000000b84*/ v_xor_b32       v13, v16, v13
+/*000000000b88*/ v_alignbit_b32  v16, v34, v34, 25
+/*000000000b90*/ v_xor_b32       v13, v13, v16
+/*000000000b94*/ v_bfi_b32       v16, v34, v37, v33
+/*000000000b9c*/ v_add_u32       v16, vcc, v16, v32
+/*000000000ba0*/ v_add_u32       v13, vcc, v16, v13
+/*000000000ba4*/ v_alignbit_b32  v32, v31, v31, 2
+/*000000000bac*/ v_alignbit_b32  v16, v31, v31, 13
+/*000000000bb4*/ v_xor_b32       v16, v32, v16
+/*000000000bb8*/ v_alignbit_b32  v32, v31, v31, 22
+/*000000000bc0*/ v_xor_b32       v16, v16, v32
+/*000000000bc4*/ v_xor_b32       v32, v30, v29
+/*000000000bc8*/ v_and_b32       v32, v31, v32
+/*000000000bcc*/ v_and_b32       v38, v30, v29
+/*000000000bd0*/ s_waitcnt       vmcnt(0)
+/*000000000bd4*/ v_add_u32       v13, vcc, v13, v12
+/*000000000bd8*/ v_xor_b32       v32, v32, v38
+/*000000000bdc*/ v_add_u32       v16, vcc, v16, v32
+/*000000000be0*/ v_add_u32       v13, vcc, s33, v13
+/*000000000be4*/ v_add_u32       v38, vcc, v16, v13
+/*000000000be8*/ v_add_u32       v28, vcc, v13, v28
+/*000000000bec*/ v_alignbit_b32  v32, v15, v15, 17
+/*000000000bf4*/ v_alignbit_b32  v13, v15, v15, 19
+/*000000000bfc*/ v_xor_b32       v13, v32, v13
+/*000000000c00*/ v_lshrrev_b32   v16, 10, v15
+/*000000000c04*/ v_xor_b32       v13, v13, v16
+/*000000000c08*/ v_alignbit_b32  v16, v22, v22, 7
+/*000000000c10*/ v_alignbit_b32  v32, v22, v22, 18
+/*000000000c18*/ v_add_u32       v13, vcc, v13, v36
+/*000000000c1c*/ v_xor_b32       v16, v16, v32
+/*000000000c20*/ v_lshrrev_b32   v32, 3, v22
+/*000000000c24*/ v_xor_b32       v16, v16, v32
+/*000000000c28*/ v_add_u32       v13, vcc, v13, v19
+/*000000000c2c*/ v_add_u32       v13, vcc, v13, v16
+/*000000000c30*/ v_alignbit_b32  v19, v28, v28, 6
+/*000000000c38*/ v_alignbit_b32  v16, v28, v28, 11
+/*000000000c40*/ v_xor_b32       v16, v19, v16
+/*000000000c44*/ v_alignbit_b32  v19, v28, v28, 25
+/*000000000c4c*/ v_xor_b32       v16, v16, v19
+/*000000000c50*/ v_bfi_b32       v19, v28, v34, v37
+/*000000000c58*/ v_add_u32       v19, vcc, v19, v33
+/*000000000c5c*/ v_add_u32       v16, vcc, v19, v16
+/*000000000c60*/ v_alignbit_b32  v32, v38, v38, 2
+/*000000000c68*/ v_alignbit_b32  v19, v38, v38, 13
+/*000000000c70*/ v_xor_b32       v19, v32, v19
+/*000000000c74*/ v_alignbit_b32  v32, v38, v38, 22
+/*000000000c7c*/ v_xor_b32       v19, v19, v32
+/*000000000c80*/ v_xor_b32       v32, v31, v30
+/*000000000c84*/ v_and_b32       v32, v32, v38
+/*000000000c88*/ v_and_b32       v33, v31, v30
+/*000000000c8c*/ v_add_u32       v16, vcc, v16, v13
+/*000000000c90*/ v_xor_b32       v32, v32, v33
+/*000000000c94*/ v_add_u32       v19, vcc, v19, v32
+/*000000000c98*/ v_add_u32       v16, vcc, s34, v16
+/*000000000c9c*/ v_add_u32       v33, vcc, v19, v16
+/*000000000ca0*/ v_add_u32       v29, vcc, v16, v29
+/*000000000ca4*/ v_alignbit_b32  v32, v12, v12, 17
+/*000000000cac*/ v_alignbit_b32  v16, v12, v12, 19
+/*000000000cb4*/ v_xor_b32       v16, v32, v16
+/*000000000cb8*/ v_lshrrev_b32   v19, 10, v12
+/*000000000cbc*/ v_xor_b32       v16, v16, v19
+/*000000000cc0*/ v_alignbit_b32  v19, v25, v25, 7
+/*000000000cc8*/ v_alignbit_b32  v32, v25, v25, 18
+/*000000000cd0*/ v_add_u32       v16, vcc, v16, v24
+/*000000000cd4*/ v_xor_b32       v19, v19, v32
+/*000000000cd8*/ v_lshrrev_b32   v32, 3, v25
+/*000000000cdc*/ v_xor_b32       v19, v19, v32
+/*000000000ce0*/ v_add_u32       v16, vcc, v16, v22
+/*000000000ce4*/ v_add_u32       v16, vcc, v16, v19
+/*000000000ce8*/ v_alignbit_b32  v22, v29, v29, 6
+/*000000000cf0*/ v_alignbit_b32  v19, v29, v29, 11
+/*000000000cf8*/ v_xor_b32       v19, v22, v19
+/*000000000cfc*/ v_alignbit_b32  v22, v29, v29, 25
+/*000000000d04*/ v_xor_b32       v19, v19, v22
+/*000000000d08*/ v_bfi_b32       v22, v29, v28, v34
+/*000000000d10*/ v_add_u32       v22, vcc, v22, v37
+/*000000000d14*/ v_add_u32       v19, vcc, v22, v19
+/*000000000d18*/ v_alignbit_b32  v32, v33, v33, 2
+/*000000000d20*/ v_alignbit_b32  v22, v33, v33, 13
+/*000000000d28*/ v_xor_b32       v22, v32, v22
+/*000000000d2c*/ v_alignbit_b32  v32, v33, v33, 22
+/*000000000d34*/ v_xor_b32       v22, v22, v32
+/*000000000d38*/ v_xor_b32       v32, v38, v31
+/*000000000d3c*/ v_and_b32       v32, v33, v32
+/*000000000d40*/ v_and_b32       v37, v38, v31
+/*000000000d44*/ v_add_u32       v19, vcc, v19, v16
+/*000000000d48*/ v_xor_b32       v32, v32, v37
+/*000000000d4c*/ v_add_u32       v22, vcc, v22, v32
+/*000000000d50*/ v_add_u32       v19, vcc, s35, v19
+/*000000000d54*/ v_add_u32       v37, vcc, v22, v19
+/*000000000d58*/ v_add_u32       v30, vcc, v19, v30
+/*000000000d5c*/ v_alignbit_b32  v32, v13, v13, 17
+/*000000000d64*/ v_alignbit_b32  v19, v13, v13, 19
+/*000000000d6c*/ v_xor_b32       v19, v32, v19
+/*000000000d70*/ v_lshrrev_b32   v22, 10, v13
+/*000000000d74*/ v_xor_b32       v19, v19, v22
+/*000000000d78*/ v_alignbit_b32  v22, v26, v26, 7
+/*000000000d80*/ v_alignbit_b32  v32, v26, v26, 18
+/*000000000d88*/ v_add_u32       v19, vcc, v19, v23
+/*000000000d8c*/ v_xor_b32       v22, v22, v32
+/*000000000d90*/ v_lshrrev_b32   v32, 3, v26
+/*000000000d94*/ v_xor_b32       v22, v22, v32
+/*000000000d98*/ v_add_u32       v19, vcc, v19, v25
+/*000000000d9c*/ v_add_u32       v19, vcc, v19, v22
+/*000000000da0*/ v_alignbit_b32  v25, v30, v30, 6
+/*000000000da8*/ v_alignbit_b32  v22, v30, v30, 11
+/*000000000db0*/ v_xor_b32       v22, v25, v22
+/*000000000db4*/ v_alignbit_b32  v25, v30, v30, 25
+/*000000000dbc*/ v_xor_b32       v22, v22, v25
+/*000000000dc0*/ v_bfi_b32       v25, v30, v29, v28
+/*000000000dc8*/ v_add_u32       v25, vcc, v25, v34
+/*000000000dcc*/ v_add_u32       v22, vcc, v25, v22
+/*000000000dd0*/ v_alignbit_b32  v32, v37, v37, 2
+/*000000000dd8*/ v_alignbit_b32  v25, v37, v37, 13
+/*000000000de0*/ v_xor_b32       v25, v32, v25
+/*000000000de4*/ v_alignbit_b32  v32, v37, v37, 22
+/*000000000dec*/ v_xor_b32       v25, v25, v32
+/*000000000df0*/ v_xor_b32       v32, v33, v38
+/*000000000df4*/ v_and_b32       v32, v32, v37
+/*000000000df8*/ v_and_b32       v34, v33, v38
+/*000000000dfc*/ v_add_u32       v22, vcc, v22, v19
+/*000000000e00*/ v_xor_b32       v32, v32, v34
+/*000000000e04*/ v_add_u32       v25, vcc, v25, v32
+/*000000000e08*/ v_add_u32       v22, vcc, s36, v22
+/*000000000e0c*/ v_add_u32       v32, vcc, v22, v31
+/*000000000e10*/ v_add_u32       v34, vcc, v25, v22
+/*000000000e14*/ v_alignbit_b32  v31, v16, v16, 17
+/*000000000e1c*/ v_alignbit_b32  v22, v16, v16, 19
+/*000000000e24*/ v_xor_b32       v22, v31, v22
+/*000000000e28*/ v_lshrrev_b32   v25, 10, v16
+/*000000000e2c*/ v_xor_b32       v22, v22, v25
+/*000000000e30*/ v_alignbit_b32  v25, v27, v27, 7
+/*000000000e38*/ v_alignbit_b32  v31, v27, v27, 18
+/*000000000e40*/ v_add_u32       v22, vcc, v22, v21
+/*000000000e44*/ v_xor_b32       v25, v25, v31
+/*000000000e48*/ v_lshrrev_b32   v31, 3, v27
+/*000000000e4c*/ v_xor_b32       v25, v25, v31
+/*000000000e50*/ v_add_u32       v22, vcc, v22, v26
+/*000000000e54*/ v_add_u32       v22, vcc, v22, v25
+/*000000000e58*/ v_alignbit_b32  v26, v32, v32, 6
+/*000000000e60*/ v_alignbit_b32  v25, v32, v32, 11
+/*000000000e68*/ v_xor_b32       v25, v26, v25
+/*000000000e6c*/ v_alignbit_b32  v26, v32, v32, 25
+/*000000000e74*/ v_xor_b32       v25, v25, v26
+/*000000000e78*/ v_bfi_b32       v26, v32, v30, v29
+/*000000000e80*/ v_add_u32       v26, vcc, v26, v28
+/*000000000e84*/ v_add_u32       v25, vcc, v26, v25
+/*000000000e88*/ v_alignbit_b32  v28, v34, v34, 2
+/*000000000e90*/ v_alignbit_b32  v26, v34, v34, 13
+/*000000000e98*/ v_xor_b32       v26, v28, v26
+/*000000000e9c*/ v_alignbit_b32  v28, v34, v34, 22
+/*000000000ea4*/ v_xor_b32       v26, v26, v28
+/*000000000ea8*/ v_xor_b32       v28, v37, v33
+/*000000000eac*/ v_and_b32       v28, v34, v28
+/*000000000eb0*/ v_and_b32       v31, v37, v33
+/*000000000eb4*/ v_xor_b32       v28, v28, v31
+/*000000000eb8*/ v_add_u32       v25, vcc, v25, v22
+/*000000000ebc*/ v_add_u32       v26, vcc, v26, v28
+/*000000000ec0*/ v_add_u32       v25, vcc, s37, v25
+/*000000000ec4*/ v_add_u32       v38, vcc, v25, v38
+/*000000000ec8*/ v_add_u32       v26, vcc, v26, v25
+/*000000000ecc*/ v_alignbit_b32  v28, v19, v19, 17
+/*000000000ed4*/ v_alignbit_b32  v25, v19, v19, 19
+/*000000000edc*/ v_xor_b32       v25, v28, v25
+/*000000000ee0*/ v_lshrrev_b32   v28, 10, v19
+/*000000000ee4*/ v_xor_b32       v25, v25, v28
+/*000000000ee8*/ v_alignbit_b32  v28, v20, v20, 7
+/*000000000ef0*/ v_alignbit_b32  v31, v20, v20, 18
+/*000000000ef8*/ v_add_u32       v25, vcc, v25, v18
+/*000000000efc*/ v_xor_b32       v28, v28, v31
+/*000000000f00*/ v_lshrrev_b32   v31, 3, v20
+/*000000000f04*/ v_xor_b32       v28, v28, v31
+/*000000000f08*/ v_add_u32       v25, vcc, v25, v27
+/*000000000f0c*/ v_add_u32       v25, vcc, v25, v28
+/*000000000f10*/ v_alignbit_b32  v27, v38, v38, 6
+/*000000000f18*/ v_alignbit_b32  v28, v38, v38, 11
+/*000000000f20*/ v_xor_b32       v27, v27, v28
+/*000000000f24*/ v_alignbit_b32  v28, v38, v38, 25
+/*000000000f2c*/ v_xor_b32       v27, v27, v28
+/*000000000f30*/ v_bfi_b32       v28, v38, v32, v30
+/*000000000f38*/ v_add_u32       v28, vcc, v28, v29
+/*000000000f3c*/ v_add_u32       v27, vcc, v28, v27
+/*000000000f40*/ v_alignbit_b32  v29, v26, v26, 2
+/*000000000f48*/ v_alignbit_b32  v28, v26, v26, 13
+/*000000000f50*/ v_xor_b32       v28, v29, v28
+/*000000000f54*/ v_alignbit_b32  v29, v26, v26, 22
+/*000000000f5c*/ v_xor_b32       v28, v28, v29
+/*000000000f60*/ v_xor_b32       v29, v34, v37
+/*000000000f64*/ v_and_b32       v29, v29, v26
+/*000000000f68*/ v_and_b32       v31, v34, v37
+/*000000000f6c*/ v_xor_b32       v29, v29, v31
+/*000000000f70*/ v_add_u32       v27, vcc, v27, v25
+/*000000000f74*/ v_add_u32       v28, vcc, v28, v29
+/*000000000f78*/ v_add_u32       v27, vcc, s38, v27
+/*000000000f7c*/ v_add_u32       v29, vcc, v27, v33
+/*000000000f80*/ v_add_u32       v27, vcc, v28, v27
+/*000000000f84*/ v_alignbit_b32  v31, v22, v22, 17
+/*000000000f8c*/ v_alignbit_b32  v28, v22, v22, 19
+/*000000000f94*/ v_xor_b32       v28, v31, v28
+/*000000000f98*/ v_lshrrev_b32   v31, 10, v22
+/*000000000f9c*/ v_xor_b32       v28, v28, v31
+/*000000000fa0*/ v_alignbit_b32  v31, v17, v17, 7
+/*000000000fa8*/ v_alignbit_b32  v33, v17, v17, 18
+/*000000000fb0*/ v_xor_b32       v31, v31, v33
+/*000000000fb4*/ v_lshrrev_b32   v33, 3, v17
+/*000000000fb8*/ v_add_u32       v28, vcc, v28, v15
+/*000000000fbc*/ v_xor_b32       v31, v31, v33
+/*000000000fc0*/ v_add_u32       v20, vcc, v28, v20
+/*000000000fc4*/ v_add_u32       v28, vcc, v20, v31
+/*000000000fc8*/ v_alignbit_b32  v33, v29, v29, 6
+/*000000000fd0*/ v_alignbit_b32  v20, v29, v29, 11
+/*000000000fd8*/ v_xor_b32       v20, v33, v20
+/*000000000fdc*/ v_alignbit_b32  v31, v29, v29, 25
+/*000000000fe4*/ v_xor_b32       v20, v20, v31
+/*000000000fe8*/ v_bfi_b32       v31, v29, v38, v32
+/*000000000ff0*/ v_add_u32       v30, vcc, v31, v30
+/*000000000ff4*/ v_add_u32       v20, vcc, v30, v20
+/*000000000ff8*/ v_alignbit_b32  v31, v27, v27, 2
+/*000000001000*/ v_alignbit_b32  v30, v27, v27, 13
+/*000000001008*/ v_xor_b32       v30, v31, v30
+/*00000000100c*/ v_alignbit_b32  v31, v27, v27, 22
+/*000000001014*/ v_xor_b32       v30, v30, v31
+/*000000001018*/ v_xor_b32       v31, v26, v34
+/*00000000101c*/ v_and_b32       v31, v27, v31
+/*000000001020*/ v_and_b32       v33, v26, v34
+/*000000001024*/ v_xor_b32       v31, v31, v33
+/*000000001028*/ v_add_u32       v20, vcc, v20, v28
+/*00000000102c*/ v_add_u32       v30, vcc, v30, v31
+/*000000001030*/ v_add_u32       v20, vcc, s39, v20
+/*000000001034*/ v_add_u32       v37, vcc, v20, v37
+/*000000001038*/ v_add_u32       v20, vcc, v30, v20
+/*00000000103c*/ v_alignbit_b32  v31, v25, v25, 17
+/*000000001044*/ v_alignbit_b32  v30, v25, v25, 19
+/*00000000104c*/ v_xor_b32       v30, v31, v30
+/*000000001050*/ v_lshrrev_b32   v31, 10, v25
+/*000000001054*/ v_xor_b32       v30, v30, v31
+/*000000001058*/ v_alignbit_b32  v31, v14, v14, 7
+/*000000001060*/ v_alignbit_b32  v33, v14, v14, 18
+/*000000001068*/ v_xor_b32       v31, v31, v33
+/*00000000106c*/ v_lshrrev_b32   v33, 3, v14
+/*000000001070*/ v_add_u32       v30, vcc, v30, v12
+/*000000001074*/ v_xor_b32       v31, v31, v33
+/*000000001078*/ v_add_u32       v17, vcc, v30, v17
+/*00000000107c*/ v_add_u32       v31, vcc, v17, v31
+/*000000001080*/ v_alignbit_b32  v30, v37, v37, 6
+/*000000001088*/ v_alignbit_b32  v17, v37, v37, 11
+/*000000001090*/ v_xor_b32       v17, v30, v17
+/*000000001094*/ v_alignbit_b32  v30, v37, v37, 25
+/*00000000109c*/ v_xor_b32       v17, v17, v30
+/*0000000010a0*/ v_bfi_b32       v30, v37, v29, v38
+/*0000000010a8*/ v_add_u32       v30, vcc, v30, v32
+/*0000000010ac*/ v_add_u32       v17, vcc, v30, v17
+/*0000000010b0*/ v_alignbit_b32  v32, v20, v20, 2
+/*0000000010b8*/ v_alignbit_b32  v30, v20, v20, 13
+/*0000000010c0*/ v_xor_b32       v30, v32, v30
+/*0000000010c4*/ v_alignbit_b32  v32, v20, v20, 22
+/*0000000010cc*/ v_xor_b32       v30, v30, v32
+/*0000000010d0*/ v_xor_b32       v32, v27, v26
+/*0000000010d4*/ v_and_b32       v32, v32, v20
+/*0000000010d8*/ v_and_b32       v33, v27, v26
+/*0000000010dc*/ v_xor_b32       v32, v32, v33
+/*0000000010e0*/ v_add_u32       v17, vcc, v17, v31
+/*0000000010e4*/ v_add_u32       v30, vcc, v30, v32
+/*0000000010e8*/ v_add_u32       v17, vcc, s40, v17
+/*0000000010ec*/ v_add_u32       v32, vcc, v17, v34
+/*0000000010f0*/ v_add_u32       v30, vcc, v30, v17
+/*0000000010f4*/ v_alignbit_b32  v33, v28, v28, 17
+/*0000000010fc*/ v_alignbit_b32  v17, v28, v28, 19
+/*000000001104*/ v_xor_b32       v17, v33, v17
+/*000000001108*/ v_lshrrev_b32   v33, 10, v28
+/*00000000110c*/ v_xor_b32       v17, v17, v33
+/*000000001110*/ v_alignbit_b32  v33, v35, v35, 7
+/*000000001118*/ v_alignbit_b32  v34, v35, v35, 18
+/*000000001120*/ v_xor_b32       v33, v33, v34
+/*000000001124*/ v_lshrrev_b32   v34, 3, v35
+/*000000001128*/ v_add_u32       v17, vcc, v17, v13
+/*00000000112c*/ v_xor_b32       v33, v33, v34
+/*000000001130*/ v_add_u32       v14, vcc, v17, v14
+/*000000001134*/ v_add_u32       v33, vcc, v14, v33
+/*000000001138*/ v_alignbit_b32  v17, v32, v32, 6
+/*000000001140*/ v_alignbit_b32  v14, v32, v32, 11
+/*000000001148*/ v_xor_b32       v14, v17, v14
+/*00000000114c*/ v_alignbit_b32  v17, v32, v32, 25
+/*000000001154*/ v_xor_b32       v14, v14, v17
+/*000000001158*/ v_bfi_b32       v17, v32, v37, v29
+/*000000001160*/ v_add_u32       v17, vcc, v17, v38
+/*000000001164*/ v_add_u32       v14, vcc, v17, v14
+/*000000001168*/ v_alignbit_b32  v34, v30, v30, 2
+/*000000001170*/ v_alignbit_b32  v17, v30, v30, 13
+/*000000001178*/ v_xor_b32       v17, v34, v17
+/*00000000117c*/ v_alignbit_b32  v34, v30, v30, 22
+/*000000001184*/ v_xor_b32       v17, v17, v34
+/*000000001188*/ v_xor_b32       v34, v20, v27
+/*00000000118c*/ v_and_b32       v34, v30, v34
+/*000000001190*/ v_and_b32       v38, v20, v27
+/*000000001194*/ v_add_u32       v14, vcc, v14, v33
+/*000000001198*/ v_xor_b32       v34, v34, v38
+/*00000000119c*/ v_add_u32       v17, vcc, v17, v34
+/*0000000011a0*/ v_add_u32       v14, vcc, s41, v14
+/*0000000011a4*/ v_add_u32       v38, vcc, v17, v14
+/*0000000011a8*/ v_add_u32       v26, vcc, v14, v26
+/*0000000011ac*/ v_alignbit_b32  v34, v31, v31, 17
+/*0000000011b4*/ v_alignbit_b32  v14, v31, v31, 19
+/*0000000011bc*/ v_xor_b32       v14, v34, v14
+/*0000000011c0*/ v_lshrrev_b32   v17, 10, v31
+/*0000000011c4*/ v_xor_b32       v14, v14, v17
+/*0000000011c8*/ v_alignbit_b32  v17, v36, v36, 7
+/*0000000011d0*/ v_alignbit_b32  v34, v36, v36, 18
+/*0000000011d8*/ v_add_u32       v14, vcc, v14, v16
+/*0000000011dc*/ v_xor_b32       v17, v17, v34
+/*0000000011e0*/ v_lshrrev_b32   v34, 3, v36
+/*0000000011e4*/ v_xor_b32       v17, v17, v34
+/*0000000011e8*/ v_add_u32       v14, vcc, v14, v35
+/*0000000011ec*/ v_add_u32       v14, vcc, v14, v17
+/*0000000011f0*/ v_alignbit_b32  v34, v26, v26, 6
+/*0000000011f8*/ v_alignbit_b32  v17, v26, v26, 11
+/*000000001200*/ v_xor_b32       v17, v34, v17
+/*000000001204*/ v_alignbit_b32  v34, v26, v26, 25
+/*00000000120c*/ v_xor_b32       v17, v17, v34
+/*000000001210*/ v_bfi_b32       v34, v26, v32, v37
+/*000000001218*/ v_add_u32       v29, vcc, v34, v29
+/*00000000121c*/ v_add_u32       v17, vcc, v29, v17
+/*000000001220*/ v_alignbit_b32  v34, v38, v38, 2
+/*000000001228*/ v_alignbit_b32  v29, v38, v38, 13
+/*000000001230*/ v_xor_b32       v29, v34, v29
+/*000000001234*/ v_alignbit_b32  v34, v38, v38, 22
+/*00000000123c*/ v_xor_b32       v29, v29, v34
+/*000000001240*/ v_xor_b32       v34, v30, v20
+/*000000001244*/ v_and_b32       v34, v34, v38
+/*000000001248*/ v_and_b32       v35, v30, v20
+/*00000000124c*/ v_xor_b32       v34, v34, v35
+/*000000001250*/ v_add_u32       v17, vcc, v17, v14
+/*000000001254*/ v_add_u32       v29, vcc, v29, v34
+/*000000001258*/ v_add_u32       v17, vcc, s42, v17
+/*00000000125c*/ v_add_u32       v27, vcc, v17, v27
+/*000000001260*/ v_add_u32       v29, vcc, v29, v17
+/*000000001264*/ v_alignbit_b32  v34, v33, v33, 17
+/*00000000126c*/ v_alignbit_b32  v17, v33, v33, 19
+/*000000001274*/ v_xor_b32       v17, v34, v17
+/*000000001278*/ v_lshrrev_b32   v34, 10, v33
+/*00000000127c*/ v_xor_b32       v17, v17, v34
+/*000000001280*/ v_alignbit_b32  v34, v24, v24, 7
+/*000000001288*/ v_alignbit_b32  v35, v24, v24, 18
+/*000000001290*/ v_add_u32       v17, vcc, v17, v19
+/*000000001294*/ v_xor_b32       v34, v34, v35
+/*000000001298*/ v_lshrrev_b32   v35, 3, v24
+/*00000000129c*/ v_xor_b32       v34, v34, v35
+/*0000000012a0*/ v_add_u32       v17, vcc, v17, v36
+/*0000000012a4*/ v_add_u32       v17, vcc, v17, v34
+/*0000000012a8*/ v_alignbit_b32  v35, v27, v27, 6
+/*0000000012b0*/ v_alignbit_b32  v34, v27, v27, 11
+/*0000000012b8*/ v_xor_b32       v34, v35, v34
+/*0000000012bc*/ v_alignbit_b32  v35, v27, v27, 25
+/*0000000012c4*/ v_xor_b32       v34, v34, v35
+/*0000000012c8*/ v_bfi_b32       v35, v27, v26, v32
+/*0000000012d0*/ v_add_u32       v35, vcc, v35, v37
+/*0000000012d4*/ v_add_u32       v34, vcc, v35, v34
+/*0000000012d8*/ v_alignbit_b32  v36, v29, v29, 2
+/*0000000012e0*/ v_alignbit_b32  v35, v29, v29, 13
+/*0000000012e8*/ v_xor_b32       v35, v36, v35
+/*0000000012ec*/ v_alignbit_b32  v36, v29, v29, 22
+/*0000000012f4*/ v_xor_b32       v35, v35, v36
+/*0000000012f8*/ v_xor_b32       v36, v38, v30
+/*0000000012fc*/ v_and_b32       v36, v29, v36
+/*000000001300*/ v_and_b32       v37, v38, v30
+/*000000001304*/ v_xor_b32       v36, v36, v37
+/*000000001308*/ v_add_u32       v34, vcc, v34, v17
+/*00000000130c*/ v_add_u32       v35, vcc, v35, v36
+/*000000001310*/ v_add_u32       v34, vcc, s43, v34
+/*000000001314*/ v_add_u32       v36, vcc, v34, v20
+/*000000001318*/ v_add_u32       v34, vcc, v35, v34
+/*00000000131c*/ v_alignbit_b32  v20, v14, v14, 17
+/*000000001324*/ v_alignbit_b32  v35, v14, v14, 19
+/*00000000132c*/ v_xor_b32       v20, v20, v35
+/*000000001330*/ v_lshrrev_b32   v35, 10, v14
+/*000000001334*/ v_xor_b32       v20, v20, v35
+/*000000001338*/ v_alignbit_b32  v35, v23, v23, 7
+/*000000001340*/ v_alignbit_b32  v37, v23, v23, 18
+/*000000001348*/ v_add_u32       v20, vcc, v20, v22
+/*00000000134c*/ v_xor_b32       v35, v35, v37
+/*000000001350*/ v_lshrrev_b32   v37, 3, v23
+/*000000001354*/ v_xor_b32       v35, v35, v37
+/*000000001358*/ v_add_u32       v20, vcc, v20, v24
+/*00000000135c*/ v_add_u32       v20, vcc, v20, v35
+/*000000001360*/ v_alignbit_b32  v24, v36, v36, 6
+/*000000001368*/ v_alignbit_b32  v35, v36, v36, 11
+/*000000001370*/ v_xor_b32       v24, v24, v35
+/*000000001374*/ v_alignbit_b32  v35, v36, v36, 25
+/*00000000137c*/ v_xor_b32       v24, v24, v35
+/*000000001380*/ v_bfi_b32       v35, v36, v27, v26
+/*000000001388*/ v_add_u32       v32, vcc, v35, v32
+/*00000000138c*/ v_add_u32       v24, vcc, v32, v24
+/*000000001390*/ v_alignbit_b32  v35, v34, v34, 2
+/*000000001398*/ v_alignbit_b32  v32, v34, v34, 13
+/*0000000013a0*/ v_xor_b32       v32, v35, v32
+/*0000000013a4*/ v_alignbit_b32  v35, v34, v34, 22
+/*0000000013ac*/ v_xor_b32       v32, v32, v35
+/*0000000013b0*/ v_xor_b32       v35, v29, v38
+/*0000000013b4*/ v_and_b32       v35, v35, v34
+/*0000000013b8*/ v_and_b32       v37, v29, v38
+/*0000000013bc*/ v_xor_b32       v35, v35, v37
+/*0000000013c0*/ v_add_u32       v24, vcc, v24, v20
+/*0000000013c4*/ v_add_u32       v32, vcc, v32, v35
+/*0000000013c8*/ v_add_u32       v24, vcc, s44, v24
+/*0000000013cc*/ v_add_u32       v30, vcc, v24, v30
+/*0000000013d0*/ v_add_u32       v24, vcc, v32, v24
+/*0000000013d4*/ v_alignbit_b32  v35, v17, v17, 17
+/*0000000013dc*/ v_alignbit_b32  v32, v17, v17, 19
+/*0000000013e4*/ v_xor_b32       v32, v35, v32
+/*0000000013e8*/ v_lshrrev_b32   v35, 10, v17
+/*0000000013ec*/ v_xor_b32       v32, v32, v35
+/*0000000013f0*/ v_alignbit_b32  v35, v21, v21, 7
+/*0000000013f8*/ v_alignbit_b32  v37, v21, v21, 18
+/*000000001400*/ v_xor_b32       v35, v35, v37
+/*000000001404*/ v_lshrrev_b32   v37, 3, v21
+/*000000001408*/ v_add_u32       v32, vcc, v32, v25
+/*00000000140c*/ v_xor_b32       v35, v35, v37
+/*000000001410*/ v_add_u32       v23, vcc, v32, v23
+/*000000001414*/ v_add_u32       v23, vcc, v23, v35
+/*000000001418*/ v_alignbit_b32  v32, v30, v30, 6
+/*000000001420*/ v_alignbit_b32  v35, v30, v30, 11
+/*000000001428*/ v_xor_b32       v32, v32, v35
+/*00000000142c*/ v_alignbit_b32  v35, v30, v30, 25
+/*000000001434*/ v_xor_b32       v32, v32, v35
+/*000000001438*/ v_bfi_b32       v35, v30, v36, v27
+/*000000001440*/ v_add_u32       v26, vcc, v35, v26
+/*000000001444*/ v_add_u32       v26, vcc, v26, v32
+/*000000001448*/ v_alignbit_b32  v35, v24, v24, 2
+/*000000001450*/ v_alignbit_b32  v32, v24, v24, 13
+/*000000001458*/ v_xor_b32       v32, v35, v32
+/*00000000145c*/ v_alignbit_b32  v35, v24, v24, 22
+/*000000001464*/ v_xor_b32       v32, v32, v35
+/*000000001468*/ v_xor_b32       v35, v34, v29
+/*00000000146c*/ v_and_b32       v35, v24, v35
+/*000000001470*/ v_and_b32       v37, v34, v29
+/*000000001474*/ v_xor_b32       v35, v35, v37
+/*000000001478*/ v_add_u32       v26, vcc, v26, v23
+/*00000000147c*/ v_add_u32       v32, vcc, v32, v35
+/*000000001480*/ v_add_u32       v26, vcc, s45, v26
+/*000000001484*/ v_add_u32       v35, vcc, v26, v38
+/*000000001488*/ v_add_u32       v38, vcc, v32, v26
+/*00000000148c*/ v_alignbit_b32  v37, v20, v20, 17
+/*000000001494*/ v_alignbit_b32  v26, v20, v20, 19
+/*00000000149c*/ v_xor_b32       v26, v37, v26
+/*0000000014a0*/ v_lshrrev_b32   v32, 10, v20
+/*0000000014a4*/ v_xor_b32       v26, v26, v32
+/*0000000014a8*/ v_alignbit_b32  v32, v18, v18, 7
+/*0000000014b0*/ v_alignbit_b32  v37, v18, v18, 18
+/*0000000014b8*/ v_xor_b32       v32, v32, v37
+/*0000000014bc*/ v_lshrrev_b32   v37, 3, v18
+/*0000000014c0*/ v_add_u32       v26, vcc, v26, v28
+/*0000000014c4*/ v_xor_b32       v32, v32, v37
+/*0000000014c8*/ v_add_u32       v21, vcc, v26, v21
+/*0000000014cc*/ v_add_u32       v26, vcc, v21, v32
+/*0000000014d0*/ v_alignbit_b32  v37, v35, v35, 6
+/*0000000014d8*/ v_alignbit_b32  v21, v35, v35, 11
+/*0000000014e0*/ v_xor_b32       v21, v37, v21
+/*0000000014e4*/ v_alignbit_b32  v32, v35, v35, 25
+/*0000000014ec*/ v_xor_b32       v21, v21, v32
+/*0000000014f0*/ v_bfi_b32       v32, v35, v30, v36
+/*0000000014f8*/ v_add_u32       v27, vcc, v32, v27
+/*0000000014fc*/ v_add_u32       v21, vcc, v27, v21
+/*000000001500*/ v_alignbit_b32  v32, v38, v38, 2
+/*000000001508*/ v_alignbit_b32  v27, v38, v38, 13
+/*000000001510*/ v_xor_b32       v27, v32, v27
+/*000000001514*/ v_alignbit_b32  v32, v38, v38, 22
+/*00000000151c*/ v_xor_b32       v27, v27, v32
+/*000000001520*/ v_xor_b32       v32, v24, v34
+/*000000001524*/ v_and_b32       v32, v32, v38
+/*000000001528*/ v_and_b32       v37, v24, v34
+/*00000000152c*/ v_add_u32       v21, vcc, v21, v26
+/*000000001530*/ v_xor_b32       v32, v32, v37
+/*000000001534*/ v_add_u32       v27, vcc, v27, v32
+/*000000001538*/ v_add_u32       v21, vcc, s46, v21
+/*00000000153c*/ v_add_u32       v37, vcc, v21, v29
+/*000000001540*/ v_add_u32       v21, vcc, v27, v21
+/*000000001544*/ v_alignbit_b32  v29, v23, v23, 17
+/*00000000154c*/ v_alignbit_b32  v27, v23, v23, 19
+/*000000001554*/ v_xor_b32       v27, v29, v27
+/*000000001558*/ v_lshrrev_b32   v29, 10, v23
+/*00000000155c*/ v_xor_b32       v27, v27, v29
+/*000000001560*/ v_alignbit_b32  v29, v15, v15, 7
+/*000000001568*/ v_alignbit_b32  v32, v15, v15, 18
+/*000000001570*/ v_xor_b32       v29, v29, v32
+/*000000001574*/ v_lshrrev_b32   v32, 3, v15
+/*000000001578*/ v_add_u32       v27, vcc, v27, v31
+/*00000000157c*/ v_xor_b32       v29, v29, v32
+/*000000001580*/ v_add_u32       v18, vcc, v27, v18
+/*000000001584*/ v_add_u32       v29, vcc, v18, v29
+/*000000001588*/ v_alignbit_b32  v27, v37, v37, 6
+/*000000001590*/ v_alignbit_b32  v18, v37, v37, 11
+/*000000001598*/ v_xor_b32       v18, v27, v18
+/*00000000159c*/ v_alignbit_b32  v27, v37, v37, 25
+/*0000000015a4*/ v_xor_b32       v18, v18, v27
+/*0000000015a8*/ v_bfi_b32       v27, v37, v35, v30
+/*0000000015b0*/ v_add_u32       v27, vcc, v27, v36
+/*0000000015b4*/ v_add_u32       v18, vcc, v27, v18
+/*0000000015b8*/ v_alignbit_b32  v32, v21, v21, 2
+/*0000000015c0*/ v_alignbit_b32  v27, v21, v21, 13
+/*0000000015c8*/ v_xor_b32       v27, v32, v27
+/*0000000015cc*/ v_alignbit_b32  v32, v21, v21, 22
+/*0000000015d4*/ v_xor_b32       v27, v27, v32
+/*0000000015d8*/ v_xor_b32       v32, v38, v24
+/*0000000015dc*/ v_and_b32       v32, v21, v32
+/*0000000015e0*/ v_and_b32       v36, v38, v24
+/*0000000015e4*/ v_add_u32       v18, vcc, v18, v29
+/*0000000015e8*/ v_xor_b32       v32, v32, v36
+/*0000000015ec*/ v_add_u32       v27, vcc, v27, v32
+/*0000000015f0*/ v_add_u32       v18, vcc, s47, v18
+/*0000000015f4*/ v_add_u32       v36, vcc, v18, v34
+/*0000000015f8*/ v_add_u32       v18, vcc, v27, v18
+/*0000000015fc*/ v_alignbit_b32  v32, v26, v26, 17
+/*000000001604*/ v_alignbit_b32  v27, v26, v26, 19
+/*00000000160c*/ v_xor_b32       v27, v32, v27
+/*000000001610*/ v_lshrrev_b32   v32, 10, v26
+/*000000001614*/ v_xor_b32       v27, v27, v32
+/*000000001618*/ v_alignbit_b32  v32, v12, v12, 7
+/*000000001620*/ v_alignbit_b32  v34, v12, v12, 18
+/*000000001628*/ v_xor_b32       v32, v32, v34
+/*00000000162c*/ v_lshrrev_b32   v34, 3, v12
+/*000000001630*/ v_add_u32       v27, vcc, v27, v33
+/*000000001634*/ v_xor_b32       v32, v32, v34
+/*000000001638*/ v_add_u32       v15, vcc, v27, v15
+/*00000000163c*/ v_add_u32       v32, vcc, v15, v32
+/*000000001640*/ v_alignbit_b32  v27, v36, v36, 6
+/*000000001648*/ v_alignbit_b32  v15, v36, v36, 11
+/*000000001650*/ v_xor_b32       v15, v27, v15
+/*000000001654*/ v_alignbit_b32  v27, v36, v36, 25
+/*00000000165c*/ v_xor_b32       v15, v15, v27
+/*000000001660*/ v_bfi_b32       v27, v36, v37, v35
+/*000000001668*/ v_add_u32       v27, vcc, v27, v30
+/*00000000166c*/ v_add_u32       v15, vcc, v27, v15
+/*000000001670*/ v_alignbit_b32  v30, v18, v18, 2
+/*000000001678*/ v_alignbit_b32  v27, v18, v18, 13
+/*000000001680*/ v_xor_b32       v27, v30, v27
+/*000000001684*/ v_alignbit_b32  v30, v18, v18, 22
+/*00000000168c*/ v_xor_b32       v27, v27, v30
+/*000000001690*/ v_xor_b32       v30, v21, v38
+/*000000001694*/ v_and_b32       v30, v30, v18
+/*000000001698*/ v_and_b32       v34, v21, v38
+/*00000000169c*/ v_xor_b32       v30, v30, v34
+/*0000000016a0*/ v_add_u32       v15, vcc, v15, v32
+/*0000000016a4*/ v_add_u32       v27, vcc, v27, v30
+/*0000000016a8*/ v_add_u32       v15, vcc, s48, v15
+/*0000000016ac*/ v_add_u32       v27, vcc, v27, v15
+/*0000000016b0*/ v_add_u32       v24, vcc, v15, v24
+/*0000000016b4*/ v_alignbit_b32  v30, v29, v29, 17
+/*0000000016bc*/ v_alignbit_b32  v15, v29, v29, 19
+/*0000000016c4*/ v_xor_b32       v15, v30, v15
+/*0000000016c8*/ v_lshrrev_b32   v30, 10, v29
+/*0000000016cc*/ v_xor_b32       v15, v15, v30
+/*0000000016d0*/ v_alignbit_b32  v30, v13, v13, 7
+/*0000000016d8*/ v_alignbit_b32  v34, v13, v13, 18
+/*0000000016e0*/ v_xor_b32       v30, v30, v34
+/*0000000016e4*/ v_lshrrev_b32   v34, 3, v13
+/*0000000016e8*/ v_add_u32       v15, vcc, v15, v14
+/*0000000016ec*/ v_add_u32       v12, vcc, v15, v12
+/*0000000016f0*/ v_xor_b32       v30, v30, v34
+/*0000000016f4*/ v_add_u32       v34, vcc, v12, v30
+/*0000000016f8*/ v_alignbit_b32  v15, v24, v24, 6
+/*000000001700*/ v_alignbit_b32  v12, v24, v24, 11
+/*000000001708*/ v_xor_b32       v12, v15, v12
+/*00000000170c*/ v_alignbit_b32  v15, v24, v24, 25
+/*000000001714*/ v_xor_b32       v12, v12, v15
+/*000000001718*/ v_bfi_b32       v15, v24, v36, v37
+/*000000001720*/ v_add_u32       v15, vcc, v15, v35
+/*000000001724*/ v_add_u32       v12, vcc, v15, v12
+/*000000001728*/ v_alignbit_b32  v30, v27, v27, 2
+/*000000001730*/ v_alignbit_b32  v15, v27, v27, 13
+/*000000001738*/ v_xor_b32       v15, v30, v15
+/*00000000173c*/ v_alignbit_b32  v30, v27, v27, 22
+/*000000001744*/ v_xor_b32       v15, v15, v30
+/*000000001748*/ v_xor_b32       v30, v18, v21
+/*00000000174c*/ v_and_b32       v30, v27, v30
+/*000000001750*/ v_and_b32       v35, v18, v21
+/*000000001754*/ v_xor_b32       v30, v30, v35
+/*000000001758*/ v_add_u32       v12, vcc, v12, v34
+/*00000000175c*/ v_add_u32       v15, vcc, v15, v30
+/*000000001760*/ v_add_u32       v12, vcc, s49, v12
+/*000000001764*/ v_add_u32       v30, vcc, v12, v38
+/*000000001768*/ v_add_u32       v38, vcc, v15, v12
+/*00000000176c*/ v_alignbit_b32  v35, v32, v32, 17
+/*000000001774*/ v_alignbit_b32  v12, v32, v32, 19
+/*00000000177c*/ v_xor_b32       v12, v35, v12
+/*000000001780*/ v_lshrrev_b32   v15, 10, v32
+/*000000001784*/ v_xor_b32       v12, v12, v15
+/*000000001788*/ v_alignbit_b32  v15, v16, v16, 7
+/*000000001790*/ v_alignbit_b32  v35, v16, v16, 18
+/*000000001798*/ v_add_u32       v12, vcc, v12, v17
+/*00000000179c*/ v_xor_b32       v15, v15, v35
+/*0000000017a0*/ v_lshrrev_b32   v35, 3, v16
+/*0000000017a4*/ v_xor_b32       v15, v15, v35
+/*0000000017a8*/ v_add_u32       v12, vcc, v12, v13
+/*0000000017ac*/ v_add_u32       v12, vcc, v12, v15
+/*0000000017b0*/ v_alignbit_b32  v15, v30, v30, 6
+/*0000000017b8*/ v_alignbit_b32  v35, v30, v30, 11
+/*0000000017c0*/ v_xor_b32       v15, v15, v35
+/*0000000017c4*/ v_alignbit_b32  v35, v30, v30, 25
+/*0000000017cc*/ v_xor_b32       v15, v15, v35
+/*0000000017d0*/ v_bfi_b32       v35, v30, v24, v36
+/*0000000017d8*/ v_add_u32       v35, vcc, v35, v37
+/*0000000017dc*/ v_add_u32       v15, vcc, v35, v15
+/*0000000017e0*/ v_alignbit_b32  v35, v38, v38, 2
+/*0000000017e8*/ v_alignbit_b32  v37, v38, v38, 13
+/*0000000017f0*/ v_xor_b32       v35, v35, v37
+/*0000000017f4*/ v_alignbit_b32  v37, v38, v38, 22
+/*0000000017fc*/ v_xor_b32       v35, v35, v37
+/*000000001800*/ v_xor_b32       v37, v27, v18
+/*000000001804*/ v_and_b32       v37, v37, v38
+/*000000001808*/ v_and_b32       v39, v27, v18
+/*00000000180c*/ v_xor_b32       v37, v37, v39
+/*000000001810*/ v_add_u32       v15, vcc, v15, v12
+/*000000001814*/ v_add_u32       v35, vcc, v35, v37
+/*000000001818*/ v_add_u32       v15, vcc, s50, v15
+/*00000000181c*/ v_add_u32       v37, vcc, v15, v21
+/*000000001820*/ v_add_u32       v35, vcc, v35, v15
+/*000000001824*/ v_alignbit_b32  v15, v34, v34, 17
+/*00000000182c*/ v_alignbit_b32  v21, v34, v34, 19
+/*000000001834*/ v_xor_b32       v15, v15, v21
+/*000000001838*/ v_lshrrev_b32   v21, 10, v34
+/*00000000183c*/ v_xor_b32       v15, v15, v21
+/*000000001840*/ v_alignbit_b32  v21, v19, v19, 7
+/*000000001848*/ v_alignbit_b32  v39, v19, v19, 18
+/*000000001850*/ v_add_u32       v15, vcc, v15, v20
+/*000000001854*/ v_xor_b32       v21, v21, v39
+/*000000001858*/ v_lshrrev_b32   v39, 3, v19
+/*00000000185c*/ v_xor_b32       v21, v21, v39
+/*000000001860*/ v_add_u32       v15, vcc, v15, v16
+/*000000001864*/ v_add_u32       v15, vcc, v15, v21
+/*000000001868*/ v_alignbit_b32  v21, v37, v37, 6
+/*000000001870*/ v_alignbit_b32  v39, v37, v37, 11
+/*000000001878*/ v_xor_b32       v21, v21, v39
+/*00000000187c*/ v_alignbit_b32  v39, v37, v37, 25
+/*000000001884*/ v_xor_b32       v21, v21, v39
+/*000000001888*/ v_bfi_b32       v39, v37, v30, v24
+/*000000001890*/ v_add_u32       v36, vcc, v39, v36
+/*000000001894*/ v_add_u32       v21, vcc, v36, v21
+/*000000001898*/ v_alignbit_b32  v36, v35, v35, 2
+/*0000000018a0*/ v_alignbit_b32  v39, v35, v35, 13
+/*0000000018a8*/ v_xor_b32       v36, v36, v39
+/*0000000018ac*/ v_alignbit_b32  v39, v35, v35, 22
+/*0000000018b4*/ v_xor_b32       v36, v36, v39
+/*0000000018b8*/ v_xor_b32       v39, v38, v27
+/*0000000018bc*/ v_and_b32       v39, v35, v39
+/*0000000018c0*/ v_and_b32       v40, v38, v27
+/*0000000018c4*/ v_xor_b32       v39, v39, v40
+/*0000000018c8*/ v_add_u32       v21, vcc, v21, v15
+/*0000000018cc*/ v_add_u32       v36, vcc, v36, v39
+/*0000000018d0*/ v_add_u32       v21, vcc, s51, v21
+/*0000000018d4*/ v_add_u32       v39, vcc, v21, v18
+/*0000000018d8*/ v_add_u32       v36, vcc, v36, v21
+/*0000000018dc*/ v_alignbit_b32  v18, v12, v12, 17
+/*0000000018e4*/ v_alignbit_b32  v21, v12, v12, 19
+/*0000000018ec*/ v_xor_b32       v18, v18, v21
+/*0000000018f0*/ v_lshrrev_b32   v21, 10, v12
+/*0000000018f4*/ v_xor_b32       v18, v18, v21
+/*0000000018f8*/ v_alignbit_b32  v21, v22, v22, 7
+/*000000001900*/ v_alignbit_b32  v40, v22, v22, 18
+/*000000001908*/ v_add_u32       v18, vcc, v18, v23
+/*00000000190c*/ v_xor_b32       v21, v21, v40
+/*000000001910*/ v_lshrrev_b32   v40, 3, v22
+/*000000001914*/ v_xor_b32       v21, v21, v40
+/*000000001918*/ v_add_u32       v18, vcc, v18, v19
+/*00000000191c*/ v_add_u32       v18, vcc, v18, v21
+/*000000001920*/ v_alignbit_b32  v21, v39, v39, 6
+/*000000001928*/ v_alignbit_b32  v40, v39, v39, 11
+/*000000001930*/ v_xor_b32       v21, v21, v40
+/*000000001934*/ v_alignbit_b32  v40, v39, v39, 25
+/*00000000193c*/ v_xor_b32       v21, v21, v40
+/*000000001940*/ v_bfi_b32       v40, v39, v37, v30
+/*000000001948*/ v_add_u32       v24, vcc, v40, v24
+/*00000000194c*/ v_add_u32       v21, vcc, v24, v21
+/*000000001950*/ v_alignbit_b32  v24, v36, v36, 2
+/*000000001958*/ v_alignbit_b32  v40, v36, v36, 13
+/*000000001960*/ v_xor_b32       v24, v24, v40
+/*000000001964*/ v_alignbit_b32  v40, v36, v36, 22
+/*00000000196c*/ v_xor_b32       v24, v24, v40
+/*000000001970*/ v_xor_b32       v40, v35, v38
+/*000000001974*/ v_and_b32       v40, v40, v36
+/*000000001978*/ v_and_b32       v41, v35, v38
+/*00000000197c*/ v_add_u32       v21, vcc, v21, v18
+/*000000001980*/ v_xor_b32       v40, v40, v41
+/*000000001984*/ v_add_u32       v24, vcc, v24, v40
+/*000000001988*/ v_add_u32       v21, vcc, s52, v21
+/*00000000198c*/ v_add_u32       v41, vcc, v24, v21
+/*000000001990*/ v_add_u32       v40, vcc, v21, v27
+/*000000001994*/ v_alignbit_b32  v21, v15, v15, 17
+/*00000000199c*/ v_alignbit_b32  v24, v15, v15, 19
+/*0000000019a4*/ v_xor_b32       v21, v21, v24
+/*0000000019a8*/ v_lshrrev_b32   v24, 10, v15
+/*0000000019ac*/ v_xor_b32       v21, v21, v24
+/*0000000019b0*/ v_alignbit_b32  v24, v25, v25, 7
+/*0000000019b8*/ v_alignbit_b32  v27, v25, v25, 18
+/*0000000019c0*/ v_add_u32       v21, vcc, v21, v26
+/*0000000019c4*/ v_xor_b32       v24, v24, v27
+/*0000000019c8*/ v_lshrrev_b32   v27, 3, v25
+/*0000000019cc*/ v_xor_b32       v24, v24, v27
+/*0000000019d0*/ v_add_u32       v21, vcc, v21, v22
+/*0000000019d4*/ v_add_u32       v21, vcc, v21, v24
+/*0000000019d8*/ v_alignbit_b32  v24, v40, v40, 6
+/*0000000019e0*/ v_alignbit_b32  v27, v40, v40, 11
+/*0000000019e8*/ v_xor_b32       v24, v24, v27
+/*0000000019ec*/ v_alignbit_b32  v27, v40, v40, 25
+/*0000000019f4*/ v_xor_b32       v24, v24, v27
+/*0000000019f8*/ v_bfi_b32       v27, v40, v39, v37
+/*000000001a00*/ v_add_u32       v27, vcc, v27, v30
+/*000000001a04*/ v_add_u32       v24, vcc, v27, v24
+/*000000001a08*/ v_alignbit_b32  v27, v41, v41, 2
+/*000000001a10*/ v_alignbit_b32  v30, v41, v41, 13
+/*000000001a18*/ v_xor_b32       v27, v27, v30
+/*000000001a1c*/ v_alignbit_b32  v30, v41, v41, 22
+/*000000001a24*/ v_xor_b32       v27, v27, v30
+/*000000001a28*/ v_xor_b32       v30, v36, v35
+/*000000001a2c*/ v_and_b32       v30, v41, v30
+/*000000001a30*/ v_and_b32       v42, v36, v35
+/*000000001a34*/ v_add_u32       v24, vcc, v24, v21
+/*000000001a38*/ v_xor_b32       v30, v30, v42
+/*000000001a3c*/ v_add_u32       v27, vcc, v27, v30
+/*000000001a40*/ v_add_u32       v24, vcc, s53, v24
+/*000000001a44*/ v_add_u32       v42, vcc, v27, v24
+/*000000001a48*/ v_add_u32       v38, vcc, v24, v38
+/*000000001a4c*/ v_alignbit_b32  v24, v18, v18, 17
+/*000000001a54*/ v_alignbit_b32  v27, v18, v18, 19
+/*000000001a5c*/ v_xor_b32       v24, v24, v27
+/*000000001a60*/ v_lshrrev_b32   v27, 10, v18
+/*000000001a64*/ v_xor_b32       v24, v24, v27
+/*000000001a68*/ v_alignbit_b32  v27, v28, v28, 7
+/*000000001a70*/ v_alignbit_b32  v30, v28, v28, 18
+/*000000001a78*/ v_add_u32       v24, vcc, v24, v29
+/*000000001a7c*/ v_xor_b32       v27, v27, v30
+/*000000001a80*/ v_lshrrev_b32   v30, 3, v28
+/*000000001a84*/ v_xor_b32       v27, v27, v30
+/*000000001a88*/ v_add_u32       v24, vcc, v24, v25
+/*000000001a8c*/ v_add_u32       v24, vcc, v24, v27
+/*000000001a90*/ v_alignbit_b32  v27, v38, v38, 6
+/*000000001a98*/ v_alignbit_b32  v30, v38, v38, 11
+/*000000001aa0*/ v_xor_b32       v27, v27, v30
+/*000000001aa4*/ v_alignbit_b32  v30, v38, v38, 25
+/*000000001aac*/ v_xor_b32       v27, v27, v30
+/*000000001ab0*/ v_bfi_b32       v30, v38, v40, v39
+/*000000001ab8*/ v_add_u32       v30, vcc, v30, v37
+/*000000001abc*/ v_add_u32       v27, vcc, v30, v27
+/*000000001ac0*/ v_alignbit_b32  v30, v42, v42, 2
+/*000000001ac8*/ v_alignbit_b32  v37, v42, v42, 13
+/*000000001ad0*/ v_xor_b32       v30, v30, v37
+/*000000001ad4*/ v_alignbit_b32  v37, v42, v42, 22
+/*000000001adc*/ v_xor_b32       v30, v30, v37
+/*000000001ae0*/ v_xor_b32       v37, v41, v36
+/*000000001ae4*/ v_and_b32       v37, v37, v42
+/*000000001ae8*/ v_and_b32       v43, v41, v36
+/*000000001aec*/ v_xor_b32       v37, v37, v43
+/*000000001af0*/ v_add_u32       v27, vcc, v27, v24
+/*000000001af4*/ v_add_u32       v27, vcc, s54, v27
+/*000000001af8*/ v_add_u32       v30, vcc, v30, v37
+/*000000001afc*/ v_add_u32       v37, vcc, v30, v27
+/*000000001b00*/ v_add_u32       v35, vcc, v27, v35
+/*000000001b04*/ v_alignbit_b32  v27, v21, v21, 17
+/*000000001b0c*/ v_alignbit_b32  v30, v21, v21, 19
+/*000000001b14*/ v_xor_b32       v27, v27, v30
+/*000000001b18*/ v_lshrrev_b32   v30, 10, v21
+/*000000001b1c*/ v_xor_b32       v27, v27, v30
+/*000000001b20*/ v_alignbit_b32  v30, v31, v31, 7
+/*000000001b28*/ v_alignbit_b32  v43, v31, v31, 18
+/*000000001b30*/ v_add_u32       v27, vcc, v27, v32
+/*000000001b34*/ v_xor_b32       v30, v30, v43
+/*000000001b38*/ v_lshrrev_b32   v43, 3, v31
+/*000000001b3c*/ v_xor_b32       v30, v30, v43
+/*000000001b40*/ v_add_u32       v27, vcc, v27, v28
+/*000000001b44*/ v_add_u32       v27, vcc, v27, v30
+/*000000001b48*/ v_alignbit_b32  v30, v35, v35, 6
+/*000000001b50*/ v_alignbit_b32  v43, v35, v35, 11
+/*000000001b58*/ v_xor_b32       v30, v30, v43
+/*000000001b5c*/ v_alignbit_b32  v43, v35, v35, 25
+/*000000001b64*/ v_xor_b32       v30, v30, v43
+/*000000001b68*/ v_bfi_b32       v43, v35, v38, v40
+/*000000001b70*/ v_add_u32       v39, vcc, v43, v39
+/*000000001b74*/ v_add_u32       v30, vcc, v39, v30
+/*000000001b78*/ v_alignbit_b32  v39, v37, v37, 2
+/*000000001b80*/ v_alignbit_b32  v43, v37, v37, 13
+/*000000001b88*/ v_xor_b32       v39, v39, v43
+/*000000001b8c*/ v_alignbit_b32  v43, v37, v37, 22
+/*000000001b94*/ v_xor_b32       v39, v39, v43
+/*000000001b98*/ v_xor_b32       v43, v42, v41
+/*000000001b9c*/ v_and_b32       v43, v37, v43
+/*000000001ba0*/ v_and_b32       v44, v42, v41
+/*000000001ba4*/ v_xor_b32       v43, v43, v44
+/*000000001ba8*/ v_add_u32       v30, vcc, v30, v27
+/*000000001bac*/ v_add_u32       v39, vcc, v39, v43
+/*000000001bb0*/ v_add_u32       v30, vcc, s55, v30
+/*000000001bb4*/ v_add_u32       v36, vcc, v30, v36
+/*000000001bb8*/ v_add_u32       v39, vcc, v39, v30
+/*000000001bbc*/ v_alignbit_b32  v30, v24, v24, 17
+/*000000001bc4*/ v_alignbit_b32  v43, v24, v24, 19
+/*000000001bcc*/ v_xor_b32       v30, v30, v43
+/*000000001bd0*/ v_lshrrev_b32   v43, 10, v24
+/*000000001bd4*/ v_xor_b32       v30, v30, v43
+/*000000001bd8*/ v_alignbit_b32  v43, v33, v33, 7
+/*000000001be0*/ v_alignbit_b32  v44, v33, v33, 18
+/*000000001be8*/ v_add_u32       v30, vcc, v30, v34
+/*000000001bec*/ v_xor_b32       v43, v43, v44
+/*000000001bf0*/ v_lshrrev_b32   v44, 3, v33
+/*000000001bf4*/ v_xor_b32       v43, v43, v44
+/*000000001bf8*/ v_add_u32       v30, vcc, v30, v31
+/*000000001bfc*/ v_add_u32       v30, vcc, v30, v43
+/*000000001c00*/ v_alignbit_b32  v43, v36, v36, 6
+/*000000001c08*/ v_alignbit_b32  v44, v36, v36, 11
+/*000000001c10*/ v_xor_b32       v43, v43, v44
+/*000000001c14*/ v_alignbit_b32  v44, v36, v36, 25
+/*000000001c1c*/ v_xor_b32       v43, v43, v44
+/*000000001c20*/ v_bfi_b32       v44, v36, v35, v38
+/*000000001c28*/ v_add_u32       v40, vcc, v44, v40
+/*000000001c2c*/ v_add_u32       v40, vcc, v40, v43
+/*000000001c30*/ v_alignbit_b32  v43, v39, v39, 2
+/*000000001c38*/ v_alignbit_b32  v44, v39, v39, 13
+/*000000001c40*/ v_xor_b32       v43, v43, v44
+/*000000001c44*/ v_alignbit_b32  v44, v39, v39, 22
+/*000000001c4c*/ v_xor_b32       v43, v43, v44
+/*000000001c50*/ v_xor_b32       v44, v37, v42
+/*000000001c54*/ v_and_b32       v44, v44, v39
+/*000000001c58*/ v_and_b32       v45, v37, v42
+/*000000001c5c*/ v_xor_b32       v44, v44, v45
+/*000000001c60*/ v_add_u32       v40, vcc, v40, v30
+/*000000001c64*/ v_add_u32       v43, vcc, v43, v44
+/*000000001c68*/ v_add_u32       v40, vcc, s56, v40
+/*000000001c6c*/ v_add_u32       v41, vcc, v40, v41
+/*000000001c70*/ v_add_u32       v40, vcc, v43, v40
+/*000000001c74*/ v_alignbit_b32  v43, v27, v27, 17
+/*000000001c7c*/ v_alignbit_b32  v44, v27, v27, 19
+/*000000001c84*/ v_xor_b32       v43, v43, v44
+/*000000001c88*/ v_lshrrev_b32   v44, 10, v27
+/*000000001c8c*/ v_xor_b32       v43, v43, v44
+/*000000001c90*/ v_alignbit_b32  v44, v14, v14, 7
+/*000000001c98*/ v_alignbit_b32  v45, v14, v14, 18
+/*000000001ca0*/ buffer_store_dword v13, v0, s[0:3], 0 offset:68
+/*000000001ca8*/ buffer_store_dword v16, v0, s[0:3], 0 offset:72
+/*000000001cb0*/ buffer_store_dword v19, v0, s[0:3], 0 offset:76
+/*000000001cb8*/ buffer_store_dword v22, v0, s[0:3], 0 offset:80
+/*000000001cc0*/ buffer_store_dword v25, v0, s[0:3], 0 offset:84
+/*000000001cc8*/ buffer_store_dword v28, v0, s[0:3], 0 offset:88
+/*000000001cd0*/ buffer_store_dword v31, v0, s[0:3], 0 offset:92
+/*000000001cd8*/ buffer_store_dword v33, v0, s[0:3], 0 offset:96
+/*000000001ce0*/ v_add_u32       v13, vcc, v43, v12
+/*000000001ce4*/ v_xor_b32       v44, v44, v45
+/*000000001ce8*/ v_lshrrev_b32   v45, 3, v14
+/*000000001cec*/ v_xor_b32       v44, v44, v45
+/*000000001cf0*/ v_add_u32       v13, vcc, v13, v33
+/*000000001cf4*/ v_add_u32       v33, vcc, v13, v44
+/*000000001cf8*/ v_alignbit_b32  v16, v41, v41, 6
+/*000000001d00*/ v_alignbit_b32  v13, v41, v41, 11
+/*000000001d08*/ v_xor_b32       v13, v16, v13
+/*000000001d0c*/ v_alignbit_b32  v16, v41, v41, 25
+/*000000001d14*/ v_xor_b32       v13, v13, v16
+/*000000001d18*/ v_bfi_b32       v16, v41, v36, v35
+/*000000001d20*/ v_add_u32       v16, vcc, v16, v38
+/*000000001d24*/ v_add_u32       v13, vcc, v16, v13
+/*000000001d28*/ v_alignbit_b32  v19, v40, v40, 2
+/*000000001d30*/ v_alignbit_b32  v16, v40, v40, 13
+/*000000001d38*/ v_xor_b32       v16, v19, v16
+/*000000001d3c*/ v_alignbit_b32  v19, v40, v40, 22
+/*000000001d44*/ v_xor_b32       v16, v16, v19
+/*000000001d48*/ v_xor_b32       v19, v39, v37
+/*000000001d4c*/ v_and_b32       v19, v40, v19
+/*000000001d50*/ v_and_b32       v22, v39, v37
+/*000000001d54*/ v_add_u32       v13, vcc, v13, v33
+/*000000001d58*/ v_xor_b32       v19, v19, v22
+/*000000001d5c*/ v_add_u32       v16, vcc, v16, v19
+/*000000001d60*/ v_add_u32       v13, vcc, s57, v13
+/*000000001d64*/ v_add_u32       v28, vcc, v16, v13
+/*000000001d68*/ v_add_u32       v25, vcc, v13, v42
+/*000000001d6c*/ v_alignbit_b32  v19, v30, v30, 17
+/*000000001d74*/ v_alignbit_b32  v13, v30, v30, 19
+/*000000001d7c*/ v_xor_b32       v13, v19, v13
+/*000000001d80*/ v_lshrrev_b32   v16, 10, v30
+/*000000001d84*/ v_xor_b32       v13, v13, v16
+/*000000001d88*/ v_alignbit_b32  v16, v17, v17, 7
+/*000000001d90*/ v_alignbit_b32  v19, v17, v17, 18
+/*000000001d98*/ v_add_u32       v13, vcc, v13, v15
+/*000000001d9c*/ v_xor_b32       v16, v16, v19
+/*000000001da0*/ v_lshrrev_b32   v19, 3, v17
+/*000000001da4*/ v_xor_b32       v16, v16, v19
+/*000000001da8*/ v_add_u32       v13, vcc, v13, v14
+/*000000001dac*/ v_add_u32       v13, vcc, v13, v16
+/*000000001db0*/ v_alignbit_b32  v16, v25, v25, 6
+/*000000001db8*/ v_alignbit_b32  v19, v25, v25, 11
+/*000000001dc0*/ v_xor_b32       v16, v16, v19
+/*000000001dc4*/ v_alignbit_b32  v19, v25, v25, 25
+/*000000001dcc*/ v_xor_b32       v16, v16, v19
+/*000000001dd0*/ v_bfi_b32       v19, v25, v41, v36
+/*000000001dd8*/ v_add_u32       v19, vcc, v19, v35
+/*000000001ddc*/ v_add_u32       v16, vcc, v19, v16
+/*000000001de0*/ v_alignbit_b32  v19, v28, v28, 2
+/*000000001de8*/ v_alignbit_b32  v22, v28, v28, 13
+/*000000001df0*/ v_xor_b32       v19, v19, v22
+/*000000001df4*/ v_alignbit_b32  v22, v28, v28, 22
+/*000000001dfc*/ v_xor_b32       v19, v19, v22
+/*000000001e00*/ v_xor_b32       v22, v40, v39
+/*000000001e04*/ v_and_b32       v22, v22, v28
+/*000000001e08*/ v_and_b32       v31, v40, v39
+/*000000001e0c*/ v_add_u32       v16, vcc, v16, v13
+/*000000001e10*/ v_xor_b32       v22, v22, v31
+/*000000001e14*/ v_add_u32       v19, vcc, v19, v22
+/*000000001e18*/ v_add_u32       v16, vcc, s58, v16
+/*000000001e1c*/ v_add_u32       v31, vcc, v16, v37
+/*000000001e20*/ v_add_u32       v35, vcc, v19, v16
+/*000000001e24*/ v_alignbit_b32  v16, v33, v33, 17
+/*000000001e2c*/ v_alignbit_b32  v19, v33, v33, 19
+/*000000001e34*/ v_xor_b32       v16, v16, v19
+/*000000001e38*/ v_lshrrev_b32   v19, 10, v33
+/*000000001e3c*/ v_xor_b32       v16, v16, v19
+/*000000001e40*/ v_alignbit_b32  v19, v20, v20, 7
+/*000000001e48*/ v_alignbit_b32  v22, v20, v20, 18
+/*000000001e50*/ v_add_u32       v16, vcc, v16, v18
+/*000000001e54*/ v_xor_b32       v19, v19, v22
+/*000000001e58*/ v_lshrrev_b32   v22, 3, v20
+/*000000001e5c*/ v_xor_b32       v19, v19, v22
+/*000000001e60*/ v_add_u32       v16, vcc, v16, v17
+/*000000001e64*/ v_add_u32       v16, vcc, v16, v19
+/*000000001e68*/ v_alignbit_b32  v19, v31, v31, 6
+/*000000001e70*/ v_alignbit_b32  v22, v31, v31, 11
+/*000000001e78*/ v_xor_b32       v19, v19, v22
+/*000000001e7c*/ v_alignbit_b32  v22, v31, v31, 25
+/*000000001e84*/ v_xor_b32       v19, v19, v22
+/*000000001e88*/ v_bfi_b32       v22, v31, v25, v41
+/*000000001e90*/ v_add_u32       v22, vcc, v22, v36
+/*000000001e94*/ v_add_u32       v19, vcc, v22, v19
+/*000000001e98*/ v_alignbit_b32  v22, v35, v35, 2
+/*000000001ea0*/ v_alignbit_b32  v36, v35, v35, 13
+/*000000001ea8*/ v_xor_b32       v22, v22, v36
+/*000000001eac*/ v_alignbit_b32  v36, v35, v35, 22
+/*000000001eb4*/ v_xor_b32       v22, v22, v36
+/*000000001eb8*/ v_xor_b32       v36, v28, v40
+/*000000001ebc*/ v_and_b32       v36, v35, v36
+/*000000001ec0*/ v_and_b32       v37, v28, v40
+/*000000001ec4*/ v_add_u32       v19, vcc, v19, v16
+/*000000001ec8*/ v_xor_b32       v36, v36, v37
+/*000000001ecc*/ v_add_u32       v22, vcc, v22, v36
+/*000000001ed0*/ v_add_u32       v19, vcc, s59, v19
+/*000000001ed4*/ v_add_u32       v37, vcc, v22, v19
+/*000000001ed8*/ v_add_u32       v36, vcc, v19, v39
+/*000000001edc*/ v_alignbit_b32  v19, v13, v13, 17
+/*000000001ee4*/ v_alignbit_b32  v22, v13, v13, 19
+/*000000001eec*/ v_xor_b32       v19, v19, v22
+/*000000001ef0*/ v_lshrrev_b32   v22, 10, v13
+/*000000001ef4*/ v_xor_b32       v19, v19, v22
+/*000000001ef8*/ v_alignbit_b32  v22, v23, v23, 7
+/*000000001f00*/ v_alignbit_b32  v38, v23, v23, 18
+/*000000001f08*/ v_add_u32       v19, vcc, v19, v21
+/*000000001f0c*/ v_xor_b32       v22, v22, v38
+/*000000001f10*/ v_lshrrev_b32   v38, 3, v23
+/*000000001f14*/ v_xor_b32       v22, v22, v38
+/*000000001f18*/ v_add_u32       v19, vcc, v19, v20
+/*000000001f1c*/ v_add_u32       v19, vcc, v19, v22
+/*000000001f20*/ v_alignbit_b32  v22, v36, v36, 6
+/*000000001f28*/ v_alignbit_b32  v38, v36, v36, 11
+/*000000001f30*/ v_xor_b32       v22, v22, v38
+/*000000001f34*/ v_alignbit_b32  v38, v36, v36, 25
+/*000000001f3c*/ v_xor_b32       v22, v22, v38
+/*000000001f40*/ v_bfi_b32       v38, v36, v31, v25
+/*000000001f48*/ v_add_u32       v38, vcc, v38, v41
+/*000000001f4c*/ v_add_u32       v22, vcc, v38, v22
+/*000000001f50*/ v_alignbit_b32  v38, v37, v37, 2
+/*000000001f58*/ v_alignbit_b32  v39, v37, v37, 13
+/*000000001f60*/ v_xor_b32       v38, v38, v39
+/*000000001f64*/ v_alignbit_b32  v39, v37, v37, 22
+/*000000001f6c*/ v_xor_b32       v38, v38, v39
+/*000000001f70*/ v_xor_b32       v39, v35, v28
+/*000000001f74*/ v_and_b32       v39, v39, v37
+/*000000001f78*/ v_and_b32       v41, v35, v28
+/*000000001f7c*/ v_xor_b32       v39, v39, v41
+/*000000001f80*/ v_add_u32       v22, vcc, v22, v19
+/*000000001f84*/ v_add_u32       v38, vcc, v38, v39
+/*000000001f88*/ v_add_u32       v22, vcc, s60, v22
+/*000000001f8c*/ v_add_u32       v39, vcc, v22, v40
+/*000000001f90*/ v_add_u32       v38, vcc, v38, v22
+/*000000001f94*/ v_alignbit_b32  v22, v16, v16, 17
+/*000000001f9c*/ v_alignbit_b32  v40, v16, v16, 19
+/*000000001fa4*/ v_xor_b32       v22, v22, v40
+/*000000001fa8*/ v_lshrrev_b32   v40, 10, v16
+/*000000001fac*/ v_xor_b32       v22, v22, v40
+/*000000001fb0*/ v_alignbit_b32  v40, v26, v26, 7
+/*000000001fb8*/ v_alignbit_b32  v41, v26, v26, 18
+/*000000001fc0*/ v_add_u32       v22, vcc, v22, v24
+/*000000001fc4*/ v_xor_b32       v40, v40, v41
+/*000000001fc8*/ v_lshrrev_b32   v41, 3, v26
+/*000000001fcc*/ v_xor_b32       v40, v40, v41
+/*000000001fd0*/ v_add_u32       v22, vcc, v22, v23
+/*000000001fd4*/ v_add_u32       v22, vcc, v22, v40
+/*000000001fd8*/ v_alignbit_b32  v40, v39, v39, 6
+/*000000001fe0*/ v_alignbit_b32  v41, v39, v39, 11
+/*000000001fe8*/ v_xor_b32       v40, v40, v41
+/*000000001fec*/ v_alignbit_b32  v41, v39, v39, 25
+/*000000001ff4*/ v_xor_b32       v40, v40, v41
+/*000000001ff8*/ v_bfi_b32       v41, v39, v36, v31
+/*000000002000*/ v_add_u32       v25, vcc, v41, v25
+/*000000002004*/ v_add_u32       v25, vcc, v25, v40
+/*000000002008*/ v_alignbit_b32  v40, v38, v38, 2
+/*000000002010*/ v_alignbit_b32  v41, v38, v38, 13
+/*000000002018*/ v_xor_b32       v40, v40, v41
+/*00000000201c*/ v_alignbit_b32  v41, v38, v38, 22
+/*000000002024*/ v_xor_b32       v40, v40, v41
+/*000000002028*/ v_xor_b32       v41, v37, v35
+/*00000000202c*/ v_and_b32       v41, v38, v41
+/*000000002030*/ v_and_b32       v42, v37, v35
+/*000000002034*/ v_xor_b32       v41, v41, v42
+/*000000002038*/ v_add_u32       v25, vcc, v25, v22
+/*00000000203c*/ v_add_u32       v40, vcc, v40, v41
+/*000000002040*/ v_add_u32       v25, vcc, s61, v25
+/*000000002044*/ v_add_u32       v41, vcc, v25, v28
+/*000000002048*/ v_add_u32       v40, vcc, v40, v25
+/*00000000204c*/ v_alignbit_b32  v25, v19, v19, 17
+/*000000002054*/ v_alignbit_b32  v28, v19, v19, 19
+/*00000000205c*/ v_xor_b32       v25, v25, v28
+/*000000002060*/ v_lshrrev_b32   v28, 10, v19
+/*000000002064*/ v_xor_b32       v25, v25, v28
+/*000000002068*/ v_alignbit_b32  v28, v29, v29, 7
+/*000000002070*/ v_alignbit_b32  v42, v29, v29, 18
+/*000000002078*/ v_add_u32       v25, vcc, v25, v27
+/*00000000207c*/ v_xor_b32       v28, v28, v42
+/*000000002080*/ v_lshrrev_b32   v42, 3, v29
+/*000000002084*/ v_xor_b32       v28, v28, v42
+/*000000002088*/ v_add_u32       v25, vcc, v25, v26
+/*00000000208c*/ v_add_u32       v25, vcc, v25, v28
+/*000000002090*/ v_alignbit_b32  v28, v41, v41, 6
+/*000000002098*/ v_alignbit_b32  v42, v41, v41, 11
+/*0000000020a0*/ v_xor_b32       v28, v28, v42
+/*0000000020a4*/ v_alignbit_b32  v42, v41, v41, 25
+/*0000000020ac*/ v_xor_b32       v28, v28, v42
+/*0000000020b0*/ v_bfi_b32       v42, v41, v39, v36
+/*0000000020b8*/ v_add_u32       v31, vcc, v42, v31
+/*0000000020bc*/ v_add_u32       v28, vcc, v31, v28
+/*0000000020c0*/ v_alignbit_b32  v31, v40, v40, 2
+/*0000000020c8*/ v_alignbit_b32  v42, v40, v40, 13
+/*0000000020d0*/ v_xor_b32       v31, v31, v42
+/*0000000020d4*/ v_alignbit_b32  v42, v40, v40, 22
+/*0000000020dc*/ v_xor_b32       v31, v31, v42
+/*0000000020e0*/ v_xor_b32       v42, v38, v37
+/*0000000020e4*/ v_and_b32       v42, v42, v40
+/*0000000020e8*/ v_and_b32       v43, v38, v37
+/*0000000020ec*/ v_xor_b32       v42, v42, v43
+/*0000000020f0*/ v_add_u32       v28, vcc, v28, v25
+/*0000000020f4*/ v_add_u32       v28, vcc, s62, v28
+/*0000000020f8*/ v_add_u32       v31, vcc, v31, v42
+/*0000000020fc*/ v_add_u32       v42, vcc, v31, v28
+/*000000002100*/ v_add_u32       v35, vcc, v28, v35
+/*000000002104*/ v_alignbit_b32  v28, v22, v22, 17
+/*00000000210c*/ v_alignbit_b32  v31, v22, v22, 19
+/*000000002114*/ v_xor_b32       v28, v28, v31
+/*000000002118*/ v_lshrrev_b32   v31, 10, v22
+/*00000000211c*/ v_xor_b32       v28, v28, v31
+/*000000002120*/ v_alignbit_b32  v31, v32, v32, 7
+/*000000002128*/ v_alignbit_b32  v43, v32, v32, 18
+/*000000002130*/ v_add_u32       v28, vcc, v28, v30
+/*000000002134*/ v_xor_b32       v31, v31, v43
+/*000000002138*/ v_lshrrev_b32   v43, 3, v32
+/*00000000213c*/ v_xor_b32       v31, v31, v43
+/*000000002140*/ v_add_u32       v28, vcc, v28, v29
+/*000000002144*/ v_add_u32       v28, vcc, v28, v31
+/*000000002148*/ v_alignbit_b32  v31, v35, v35, 6
+/*000000002150*/ v_alignbit_b32  v43, v35, v35, 11
+/*000000002158*/ v_xor_b32       v31, v31, v43
+/*00000000215c*/ v_alignbit_b32  v43, v35, v35, 25
+/*000000002164*/ v_xor_b32       v31, v31, v43
+/*000000002168*/ v_bfi_b32       v43, v35, v41, v39
+/*000000002170*/ v_add_u32       v36, vcc, v43, v36
+/*000000002174*/ v_add_u32       v31, vcc, v36, v31
+/*000000002178*/ v_alignbit_b32  v36, v42, v42, 2
+/*000000002180*/ v_alignbit_b32  v43, v42, v42, 13
+/*000000002188*/ v_xor_b32       v36, v36, v43
+/*00000000218c*/ v_alignbit_b32  v43, v42, v42, 22
+/*000000002194*/ v_xor_b32       v36, v36, v43
+/*000000002198*/ v_xor_b32       v43, v40, v38
+/*00000000219c*/ v_and_b32       v43, v42, v43
+/*0000000021a0*/ v_and_b32       v44, v40, v38
+/*0000000021a4*/ v_xor_b32       v43, v43, v44
+/*0000000021a8*/ v_add_u32       v31, vcc, v31, v28
+/*0000000021ac*/ v_add_u32       v36, vcc, v36, v43
+/*0000000021b0*/ v_add_u32       v31, vcc, s63, v31
+/*0000000021b4*/ v_add_u32       v37, vcc, v31, v37
+/*0000000021b8*/ v_add_u32       v36, vcc, v36, v31
+/*0000000021bc*/ v_alignbit_b32  v31, v25, v25, 17
+/*0000000021c4*/ v_alignbit_b32  v43, v25, v25, 19
+/*0000000021cc*/ v_xor_b32       v31, v31, v43
+/*0000000021d0*/ v_lshrrev_b32   v43, 10, v25
+/*0000000021d4*/ v_xor_b32       v31, v31, v43
+/*0000000021d8*/ v_alignbit_b32  v43, v34, v34, 7
+/*0000000021e0*/ v_alignbit_b32  v44, v34, v34, 18
+/*0000000021e8*/ v_add_u32       v31, vcc, v31, v33
+/*0000000021ec*/ v_xor_b32       v43, v43, v44
+/*0000000021f0*/ v_lshrrev_b32   v44, 3, v34
+/*0000000021f4*/ v_xor_b32       v43, v43, v44
+/*0000000021f8*/ v_add_u32       v31, vcc, v31, v32
+/*0000000021fc*/ v_add_u32       v31, vcc, v31, v43
+/*000000002200*/ v_alignbit_b32  v43, v37, v37, 6
+/*000000002208*/ v_alignbit_b32  v44, v37, v37, 11
+/*000000002210*/ v_xor_b32       v43, v43, v44
+/*000000002214*/ v_alignbit_b32  v44, v37, v37, 25
+/*00000000221c*/ v_xor_b32       v43, v43, v44
+/*000000002220*/ v_bfi_b32       v44, v37, v35, v41
+/*000000002228*/ v_add_u32       v39, vcc, v44, v39
+/*00000000222c*/ v_add_u32       v39, vcc, v39, v43
+/*000000002230*/ v_alignbit_b32  v43, v36, v36, 2
+/*000000002238*/ v_alignbit_b32  v44, v36, v36, 13
+/*000000002240*/ v_add_u32       v39, vcc, v39, v31
+/*000000002244*/ v_xor_b32       v43, v43, v44
+/*000000002248*/ v_alignbit_b32  v44, v36, v36, 22
+/*000000002250*/ v_xor_b32       v43, v43, v44
+/*000000002254*/ v_xor_b32       v44, v42, v40
+/*000000002258*/ v_add_u32       v39, vcc, s64, v39
+/*00000000225c*/ v_and_b32       v44, v44, v36
+/*000000002260*/ v_and_b32       v45, v42, v40
+/*000000002264*/ v_add_u32       v38, vcc, v39, v38
+/*000000002268*/ buffer_store_dword v14, v0, s[0:3], 0 offset:100
+/*000000002270*/ buffer_store_dword v17, v0, s[0:3], 0 offset:104
+/*000000002278*/ buffer_store_dword v20, v0, s[0:3], 0 offset:108
+/*000000002280*/ buffer_store_dword v23, v0, s[0:3], 0 offset:112
+/*000000002288*/ buffer_store_dword v26, v0, s[0:3], 0 offset:116
+/*000000002290*/ buffer_store_dword v29, v0, s[0:3], 0 offset:120
+/*000000002298*/ buffer_store_dword v32, v0, s[0:3], 0 offset:124
+/*0000000022a0*/ buffer_store_dword v34, v0, s[0:3], 0 offset:128
+/*0000000022a8*/ v_xor_b32       v44, v44, v45
+/*0000000022ac*/ v_alignbit_b32  v17, v38, v38, 6
+/*0000000022b4*/ v_alignbit_b32  v20, v38, v38, 11
+/*0000000022bc*/ v_add_u32       v43, vcc, v43, v44
+/*0000000022c0*/ v_xor_b32       v17, v17, v20
+/*0000000022c4*/ v_alignbit_b32  v20, v38, v38, 25
+/*0000000022cc*/ v_add_u32       v39, vcc, v43, v39
+/*0000000022d0*/ v_xor_b32       v17, v17, v20
+/*0000000022d4*/ v_bfi_b32       v20, v38, v37, v35
+/*0000000022dc*/ v_alignbit_b32  v43, v28, v28, 17
+/*0000000022e4*/ v_alignbit_b32  v44, v28, v28, 19
+/*0000000022ec*/ v_xor_b32       v43, v43, v44
+/*0000000022f0*/ v_lshrrev_b32   v44, 10, v28
+/*0000000022f4*/ v_add_u32       v20, vcc, v20, v41
+/*0000000022f8*/ v_xor_b32       v43, v43, v44
+/*0000000022fc*/ v_add_u32       v17, vcc, v20, v17
+/*000000002300*/ v_alignbit_b32  v44, v12, v12, 7
+/*000000002308*/ v_alignbit_b32  v45, v12, v12, 18
+/*000000002310*/ v_alignbit_b32  v23, v39, v39, 2
+/*000000002318*/ v_alignbit_b32  v20, v39, v39, 13
+/*000000002320*/ v_add_u32       v14, vcc, v43, v13
+/*000000002324*/ v_xor_b32       v44, v44, v45
+/*000000002328*/ v_lshrrev_b32   v45, 3, v12
+/*00000000232c*/ v_xor_b32       v20, v23, v20
+/*000000002330*/ v_alignbit_b32  v23, v39, v39, 22
+/*000000002338*/ v_add_u32       v14, vcc, v14, v34
+/*00000000233c*/ v_xor_b32       v44, v44, v45
+/*000000002340*/ v_xor_b32       v20, v20, v23
+/*000000002344*/ v_xor_b32       v23, v36, v42
+/*000000002348*/ v_add_u32       v14, vcc, v14, v44
+/*00000000234c*/ v_and_b32       v23, v39, v23
+/*000000002350*/ v_and_b32       v26, v36, v42
+/*000000002354*/ v_xor_b32       v23, v23, v26
+/*000000002358*/ v_add_u32       v17, vcc, v17, v14
+/*00000000235c*/ v_add_u32       v20, vcc, v20, v23
+/*000000002360*/ v_add_u32       v17, vcc, s65, v17
+/*000000002364*/ v_add_u32       v20, vcc, v20, v17
+/*000000002368*/ v_add_u32       v23, vcc, v17, v40
+/*00000000236c*/ v_alignbit_b32  v26, v31, v31, 17
+/*000000002374*/ v_alignbit_b32  v17, v31, v31, 19
+/*00000000237c*/ v_xor_b32       v17, v26, v17
+/*000000002380*/ v_lshrrev_b32   v26, 10, v31
+/*000000002384*/ v_xor_b32       v17, v17, v26
+/*000000002388*/ v_alignbit_b32  v26, v15, v15, 7
+/*000000002390*/ v_alignbit_b32  v29, v15, v15, 18
+/*000000002398*/ v_add_u32       v17, vcc, v17, v16
+/*00000000239c*/ v_xor_b32       v26, v26, v29
+/*0000000023a0*/ v_lshrrev_b32   v29, 3, v15
+/*0000000023a4*/ v_xor_b32       v26, v26, v29
+/*0000000023a8*/ v_add_u32       v17, vcc, v17, v12
+/*0000000023ac*/ v_add_u32       v17, vcc, v17, v26
+/*0000000023b0*/ v_alignbit_b32  v26, v23, v23, 6
+/*0000000023b8*/ v_alignbit_b32  v29, v23, v23, 11
+/*0000000023c0*/ v_xor_b32       v26, v26, v29
+/*0000000023c4*/ v_alignbit_b32  v29, v23, v23, 25
+/*0000000023cc*/ v_xor_b32       v26, v26, v29
+/*0000000023d0*/ v_bfi_b32       v29, v23, v38, v37
+/*0000000023d8*/ v_add_u32       v29, vcc, v29, v35
+/*0000000023dc*/ v_add_u32       v26, vcc, v29, v26
+/*0000000023e0*/ v_alignbit_b32  v29, v20, v20, 2
+/*0000000023e8*/ v_alignbit_b32  v32, v20, v20, 13
+/*0000000023f0*/ v_xor_b32       v29, v29, v32
+/*0000000023f4*/ v_alignbit_b32  v32, v20, v20, 22
+/*0000000023fc*/ v_xor_b32       v29, v29, v32
+/*000000002400*/ v_xor_b32       v32, v39, v36
+/*000000002404*/ v_and_b32       v32, v32, v20
+/*000000002408*/ v_and_b32       v34, v39, v36
+/*00000000240c*/ v_xor_b32       v32, v32, v34
+/*000000002410*/ v_add_u32       v26, vcc, v26, v17
+/*000000002414*/ v_add_u32       v29, vcc, v29, v32
+/*000000002418*/ v_add_u32       v26, vcc, s66, v26
+/*00000000241c*/ v_add_u32       v32, vcc, v26, v42
+/*000000002420*/ v_add_u32       v26, vcc, v29, v26
+/*000000002424*/ v_alignbit_b32  v29, v14, v14, 17
+/*00000000242c*/ v_alignbit_b32  v34, v14, v14, 19
+/*000000002434*/ v_xor_b32       v29, v29, v34
+/*000000002438*/ v_lshrrev_b32   v34, 10, v14
+/*00000000243c*/ v_xor_b32       v29, v29, v34
+/*000000002440*/ v_alignbit_b32  v34, v18, v18, 7
+/*000000002448*/ v_alignbit_b32  v35, v18, v18, 18
+/*000000002450*/ v_add_u32       v29, vcc, v29, v19
+/*000000002454*/ v_xor_b32       v34, v34, v35
+/*000000002458*/ v_lshrrev_b32   v35, 3, v18
+/*00000000245c*/ v_xor_b32       v34, v34, v35
+/*000000002460*/ v_add_u32       v29, vcc, v29, v15
+/*000000002464*/ v_add_u32       v29, vcc, v29, v34
+/*000000002468*/ v_alignbit_b32  v34, v32, v32, 6
+/*000000002470*/ v_alignbit_b32  v35, v32, v32, 11
+/*000000002478*/ v_xor_b32       v34, v34, v35
+/*00000000247c*/ v_alignbit_b32  v35, v32, v32, 25
+/*000000002484*/ v_xor_b32       v34, v34, v35
+/*000000002488*/ v_bfi_b32       v35, v32, v23, v38
+/*000000002490*/ v_add_u32       v35, vcc, v35, v37
+/*000000002494*/ v_add_u32       v34, vcc, v35, v34
+/*000000002498*/ v_alignbit_b32  v35, v26, v26, 2
+/*0000000024a0*/ v_alignbit_b32  v37, v26, v26, 13
+/*0000000024a8*/ v_xor_b32       v35, v35, v37
+/*0000000024ac*/ v_alignbit_b32  v37, v26, v26, 22
+/*0000000024b4*/ v_xor_b32       v35, v35, v37
+/*0000000024b8*/ v_xor_b32       v37, v20, v39
+/*0000000024bc*/ v_and_b32       v37, v26, v37
+/*0000000024c0*/ v_and_b32       v40, v20, v39
+/*0000000024c4*/ v_xor_b32       v37, v37, v40
+/*0000000024c8*/ v_add_u32       v34, vcc, v34, v29
+/*0000000024cc*/ v_add_u32       v35, vcc, v35, v37
+/*0000000024d0*/ v_add_u32       v34, vcc, s67, v34
+/*0000000024d4*/ v_add_u32       v36, vcc, v34, v36
+/*0000000024d8*/ v_add_u32       v34, vcc, v35, v34
+/*0000000024dc*/ v_alignbit_b32  v35, v17, v17, 17
+/*0000000024e4*/ v_alignbit_b32  v37, v17, v17, 19
+/*0000000024ec*/ v_xor_b32       v35, v35, v37
+/*0000000024f0*/ v_lshrrev_b32   v37, 10, v17
+/*0000000024f4*/ v_xor_b32       v35, v35, v37
+/*0000000024f8*/ v_alignbit_b32  v37, v21, v21, 7
+/*000000002500*/ v_alignbit_b32  v40, v21, v21, 18
+/*000000002508*/ v_add_u32       v35, vcc, v35, v22
+/*00000000250c*/ v_xor_b32       v37, v37, v40
+/*000000002510*/ v_lshrrev_b32   v40, 3, v21
+/*000000002514*/ v_xor_b32       v37, v37, v40
+/*000000002518*/ v_add_u32       v35, vcc, v35, v18
+/*00000000251c*/ v_add_u32       v35, vcc, v35, v37
+/*000000002520*/ v_alignbit_b32  v37, v36, v36, 6
+/*000000002528*/ v_alignbit_b32  v40, v36, v36, 11
+/*000000002530*/ v_xor_b32       v37, v37, v40
+/*000000002534*/ v_alignbit_b32  v40, v36, v36, 25
+/*00000000253c*/ v_xor_b32       v37, v37, v40
+/*000000002540*/ v_bfi_b32       v40, v36, v32, v23
+/*000000002548*/ v_add_u32       v38, vcc, v40, v38
+/*00000000254c*/ v_add_u32       v37, vcc, v38, v37
+/*000000002550*/ v_alignbit_b32  v38, v34, v34, 2
+/*000000002558*/ v_alignbit_b32  v40, v34, v34, 13
+/*000000002560*/ v_xor_b32       v38, v38, v40
+/*000000002564*/ v_alignbit_b32  v40, v34, v34, 22
+/*00000000256c*/ v_xor_b32       v38, v38, v40
+/*000000002570*/ v_xor_b32       v40, v26, v20
+/*000000002574*/ v_and_b32       v40, v40, v34
+/*000000002578*/ v_and_b32       v41, v26, v20
+/*00000000257c*/ v_xor_b32       v40, v40, v41
+/*000000002580*/ v_add_u32       v37, vcc, v37, v35
+/*000000002584*/ v_add_u32       v38, vcc, v38, v40
+/*000000002588*/ v_add_u32       v37, vcc, s68, v37
+/*00000000258c*/ v_add_u32       v39, vcc, v37, v39
+/*000000002590*/ v_add_u32       v37, vcc, v38, v37
+/*000000002594*/ v_alignbit_b32  v38, v29, v29, 17
+/*00000000259c*/ v_alignbit_b32  v40, v29, v29, 19
+/*0000000025a4*/ v_xor_b32       v38, v38, v40
+/*0000000025a8*/ v_lshrrev_b32   v40, 10, v29
+/*0000000025ac*/ v_xor_b32       v38, v38, v40
+/*0000000025b0*/ v_alignbit_b32  v40, v24, v24, 7
+/*0000000025b8*/ v_alignbit_b32  v41, v24, v24, 18
+/*0000000025c0*/ v_add_u32       v38, vcc, v38, v25
+/*0000000025c4*/ v_xor_b32       v40, v40, v41
+/*0000000025c8*/ v_lshrrev_b32   v41, 3, v24
+/*0000000025cc*/ v_xor_b32       v40, v40, v41
+/*0000000025d0*/ v_add_u32       v38, vcc, v38, v21
+/*0000000025d4*/ v_add_u32       v38, vcc, v38, v40
+/*0000000025d8*/ v_alignbit_b32  v40, v39, v39, 6
+/*0000000025e0*/ v_alignbit_b32  v41, v39, v39, 11
+/*0000000025e8*/ v_xor_b32       v40, v40, v41
+/*0000000025ec*/ v_alignbit_b32  v41, v39, v39, 25
+/*0000000025f4*/ v_xor_b32       v40, v40, v41
+/*0000000025f8*/ v_bfi_b32       v41, v39, v36, v32
+/*000000002600*/ v_add_u32       v23, vcc, v41, v23
+/*000000002604*/ v_add_u32       v23, vcc, v23, v40
+/*000000002608*/ v_alignbit_b32  v40, v37, v37, 2
+/*000000002610*/ v_alignbit_b32  v41, v37, v37, 13
+/*000000002618*/ v_xor_b32       v40, v40, v41
+/*00000000261c*/ v_alignbit_b32  v41, v37, v37, 22
+/*000000002624*/ v_xor_b32       v40, v40, v41
+/*000000002628*/ v_xor_b32       v41, v34, v26
+/*00000000262c*/ v_and_b32       v41, v37, v41
+/*000000002630*/ v_and_b32       v42, v34, v26
+/*000000002634*/ v_xor_b32       v41, v41, v42
+/*000000002638*/ v_add_u32       v23, vcc, v23, v38
+/*00000000263c*/ v_add_u32       v40, vcc, v40, v41
+/*000000002640*/ v_add_u32       v23, vcc, s69, v23
+/*000000002644*/ v_add_u32       v20, vcc, v23, v20
+/*000000002648*/ v_add_u32       v23, vcc, v40, v23
+/*00000000264c*/ v_alignbit_b32  v40, v35, v35, 17
+/*000000002654*/ v_alignbit_b32  v41, v35, v35, 19
+/*00000000265c*/ v_xor_b32       v40, v40, v41
+/*000000002660*/ v_lshrrev_b32   v41, 10, v35
+/*000000002664*/ v_xor_b32       v40, v40, v41
+/*000000002668*/ v_alignbit_b32  v41, v27, v27, 7
+/*000000002670*/ v_alignbit_b32  v42, v27, v27, 18
+/*000000002678*/ v_add_u32       v40, vcc, v40, v28
+/*00000000267c*/ v_xor_b32       v41, v41, v42
+/*000000002680*/ v_lshrrev_b32   v42, 3, v27
+/*000000002684*/ v_xor_b32       v41, v41, v42
+/*000000002688*/ v_add_u32       v40, vcc, v40, v24
+/*00000000268c*/ v_add_u32       v40, vcc, v40, v41
+/*000000002690*/ v_alignbit_b32  v41, v20, v20, 6
+/*000000002698*/ v_alignbit_b32  v42, v20, v20, 11
+/*0000000026a0*/ v_xor_b32       v41, v41, v42
+/*0000000026a4*/ v_alignbit_b32  v42, v20, v20, 25
+/*0000000026ac*/ v_xor_b32       v41, v41, v42
+/*0000000026b0*/ v_bfi_b32       v42, v20, v39, v36
+/*0000000026b8*/ v_add_u32       v32, vcc, v42, v32
+/*0000000026bc*/ v_add_u32       v32, vcc, v32, v41
+/*0000000026c0*/ v_alignbit_b32  v41, v23, v23, 2
+/*0000000026c8*/ v_alignbit_b32  v42, v23, v23, 13
+/*0000000026d0*/ v_xor_b32       v41, v41, v42
+/*0000000026d4*/ v_alignbit_b32  v42, v23, v23, 22
+/*0000000026dc*/ v_xor_b32       v41, v41, v42
+/*0000000026e0*/ v_xor_b32       v42, v37, v34
+/*0000000026e4*/ v_and_b32       v42, v42, v23
+/*0000000026e8*/ v_and_b32       v43, v37, v34
+/*0000000026ec*/ v_xor_b32       v42, v42, v43
+/*0000000026f0*/ v_add_u32       v32, vcc, v32, v40
+/*0000000026f4*/ v_add_u32       v41, vcc, v41, v42
+/*0000000026f8*/ v_add_u32       v32, vcc, s70, v32
+/*0000000026fc*/ v_add_u32       v26, vcc, v32, v26
+/*000000002700*/ v_add_u32       v32, vcc, v41, v32
+/*000000002704*/ v_alignbit_b32  v41, v38, v38, 17
+/*00000000270c*/ v_alignbit_b32  v42, v38, v38, 19
+/*000000002714*/ v_xor_b32       v41, v41, v42
+/*000000002718*/ v_lshrrev_b32   v42, 10, v38
+/*00000000271c*/ v_xor_b32       v41, v41, v42
+/*000000002720*/ v_alignbit_b32  v42, v30, v30, 7
+/*000000002728*/ v_alignbit_b32  v43, v30, v30, 18
+/*000000002730*/ v_add_u32       v41, vcc, v41, v31
+/*000000002734*/ v_xor_b32       v42, v42, v43
+/*000000002738*/ v_lshrrev_b32   v43, 3, v30
+/*00000000273c*/ v_xor_b32       v42, v42, v43
+/*000000002740*/ v_add_u32       v41, vcc, v41, v27
+/*000000002744*/ v_add_u32       v41, vcc, v41, v42
+/*000000002748*/ v_alignbit_b32  v42, v26, v26, 6
+/*000000002750*/ v_alignbit_b32  v43, v26, v26, 11
+/*000000002758*/ v_xor_b32       v42, v42, v43
+/*00000000275c*/ v_alignbit_b32  v43, v26, v26, 25
+/*000000002764*/ v_xor_b32       v42, v42, v43
+/*000000002768*/ v_bfi_b32       v43, v26, v20, v39
+/*000000002770*/ v_add_u32       v36, vcc, v43, v36
+/*000000002774*/ v_add_u32       v36, vcc, v36, v42
+/*000000002778*/ v_alignbit_b32  v42, v32, v32, 2
+/*000000002780*/ v_alignbit_b32  v43, v32, v32, 13
+/*000000002788*/ v_xor_b32       v42, v42, v43
+/*00000000278c*/ v_alignbit_b32  v43, v32, v32, 22
+/*000000002794*/ v_xor_b32       v42, v42, v43
+/*000000002798*/ v_xor_b32       v43, v23, v37
+/*00000000279c*/ v_and_b32       v43, v32, v43
+/*0000000027a0*/ v_and_b32       v44, v23, v37
+/*0000000027a4*/ v_xor_b32       v43, v43, v44
+/*0000000027a8*/ v_add_u32       v36, vcc, v36, v41
+/*0000000027ac*/ v_add_u32       v42, vcc, v42, v43
+/*0000000027b0*/ v_add_u32       v36, vcc, s71, v36
+/*0000000027b4*/ v_add_u32       v34, vcc, v36, v34
+/*0000000027b8*/ v_add_u32       v36, vcc, v42, v36
+/*0000000027bc*/ v_alignbit_b32  v42, v40, v40, 17
+/*0000000027c4*/ v_alignbit_b32  v43, v40, v40, 19
+/*0000000027cc*/ v_xor_b32       v42, v42, v43
+/*0000000027d0*/ v_lshrrev_b32   v43, 10, v40
+/*0000000027d4*/ v_xor_b32       v42, v42, v43
+/*0000000027d8*/ v_alignbit_b32  v43, v33, v33, 7
+/*0000000027e0*/ v_alignbit_b32  v44, v33, v33, 18
+/*0000000027e8*/ v_add_u32       v42, vcc, v42, v14
+/*0000000027ec*/ v_xor_b32       v43, v43, v44
+/*0000000027f0*/ v_lshrrev_b32   v44, 3, v33
+/*0000000027f4*/ v_xor_b32       v43, v43, v44
+/*0000000027f8*/ v_add_u32       v42, vcc, v42, v30
+/*0000000027fc*/ v_add_u32       v42, vcc, v42, v43
+/*000000002800*/ v_alignbit_b32  v43, v34, v34, 6
+/*000000002808*/ v_alignbit_b32  v44, v34, v34, 11
+/*000000002810*/ v_xor_b32       v43, v43, v44
+/*000000002814*/ v_alignbit_b32  v44, v34, v34, 25
+/*00000000281c*/ v_xor_b32       v43, v43, v44
+/*000000002820*/ v_bfi_b32       v44, v34, v26, v20
+/*000000002828*/ v_add_u32       v39, vcc, v44, v39
+/*00000000282c*/ v_add_u32       v39, vcc, v39, v43
+/*000000002830*/ v_alignbit_b32  v43, v36, v36, 2
+/*000000002838*/ v_alignbit_b32  v44, v36, v36, 13
+/*000000002840*/ v_add_u32       v39, vcc, v39, v42
+/*000000002844*/ v_xor_b32       v43, v43, v44
+/*000000002848*/ v_alignbit_b32  v44, v36, v36, 22
+/*000000002850*/ v_xor_b32       v43, v43, v44
+/*000000002854*/ v_xor_b32       v44, v32, v23
+/*000000002858*/ v_add_u32       v39, vcc, s72, v39
+/*00000000285c*/ v_and_b32       v44, v44, v36
+/*000000002860*/ v_and_b32       v45, v32, v23
+/*000000002864*/ v_add_u32       v37, vcc, v39, v37
+/*000000002868*/ buffer_store_dword v12, v0, s[0:3], 0 offset:132
+/*000000002870*/ buffer_store_dword v15, v0, s[0:3], 0 offset:136
+/*000000002878*/ buffer_store_dword v18, v0, s[0:3], 0 offset:140
+/*000000002880*/ buffer_store_dword v21, v0, s[0:3], 0 offset:144
+/*000000002888*/ buffer_store_dword v24, v0, s[0:3], 0 offset:148
+/*000000002890*/ buffer_store_dword v27, v0, s[0:3], 0 offset:152
+/*000000002898*/ buffer_store_dword v30, v0, s[0:3], 0 offset:156
+/*0000000028a0*/ buffer_store_dword v33, v0, s[0:3], 0 offset:160
+/*0000000028a8*/ v_xor_b32       v44, v44, v45
+/*0000000028ac*/ v_alignbit_b32  v15, v37, v37, 6
+/*0000000028b4*/ v_alignbit_b32  v18, v37, v37, 11
+/*0000000028bc*/ v_add_u32       v43, vcc, v43, v44
+/*0000000028c0*/ v_xor_b32       v15, v15, v18
+/*0000000028c4*/ v_alignbit_b32  v18, v37, v37, 25
+/*0000000028cc*/ v_add_u32       v39, vcc, v43, v39
+/*0000000028d0*/ v_xor_b32       v15, v15, v18
+/*0000000028d4*/ v_bfi_b32       v18, v37, v34, v26
+/*0000000028dc*/ v_alignbit_b32  v43, v41, v41, 17
+/*0000000028e4*/ v_alignbit_b32  v44, v41, v41, 19
+/*0000000028ec*/ v_add_u32       v18, vcc, v18, v20
+/*0000000028f0*/ v_xor_b32       v43, v43, v44
+/*0000000028f4*/ v_lshrrev_b32   v44, 10, v41
+/*0000000028f8*/ v_xor_b32       v43, v43, v44
+/*0000000028fc*/ v_add_u32       v15, vcc, v18, v15
+/*000000002900*/ v_alignbit_b32  v44, v13, v13, 7
+/*000000002908*/ v_alignbit_b32  v45, v13, v13, 18
+/*000000002910*/ v_alignbit_b32  v20, v39, v39, 2
+/*000000002918*/ v_alignbit_b32  v18, v39, v39, 13
+/*000000002920*/ v_add_u32       v12, vcc, v43, v17
+/*000000002924*/ v_xor_b32       v44, v44, v45
+/*000000002928*/ v_lshrrev_b32   v45, 3, v13
+/*00000000292c*/ v_xor_b32       v18, v20, v18
+/*000000002930*/ v_alignbit_b32  v20, v39, v39, 22
+/*000000002938*/ v_add_u32       v12, vcc, v12, v33
+/*00000000293c*/ v_xor_b32       v44, v44, v45
+/*000000002940*/ v_xor_b32       v18, v18, v20
+/*000000002944*/ v_xor_b32       v20, v36, v32
+/*000000002948*/ v_add_u32       v12, vcc, v12, v44
+/*00000000294c*/ v_and_b32       v20, v39, v20
+/*000000002950*/ v_and_b32       v21, v36, v32
+/*000000002954*/ v_xor_b32       v20, v20, v21
+/*000000002958*/ v_add_u32       v15, vcc, v15, v12
+/*00000000295c*/ v_add_u32       v18, vcc, v18, v20
+/*000000002960*/ v_add_u32       v15, vcc, s73, v15
+/*000000002964*/ v_add_u32       v20, vcc, v15, v23
+/*000000002968*/ v_add_u32       v15, vcc, v18, v15
+/*00000000296c*/ v_alignbit_b32  v21, v42, v42, 17
+/*000000002974*/ v_alignbit_b32  v18, v42, v42, 19
+/*00000000297c*/ v_xor_b32       v18, v21, v18
+/*000000002980*/ v_lshrrev_b32   v21, 10, v42
+/*000000002984*/ v_xor_b32       v18, v18, v21
+/*000000002988*/ v_alignbit_b32  v21, v16, v16, 7
+/*000000002990*/ v_alignbit_b32  v23, v16, v16, 18
+/*000000002998*/ v_add_u32       v18, vcc, v18, v29
+/*00000000299c*/ v_xor_b32       v21, v21, v23
+/*0000000029a0*/ v_lshrrev_b32   v23, 3, v16
+/*0000000029a4*/ v_xor_b32       v21, v21, v23
+/*0000000029a8*/ v_add_u32       v18, vcc, v18, v13
+/*0000000029ac*/ v_add_u32       v18, vcc, v18, v21
+/*0000000029b0*/ v_alignbit_b32  v21, v20, v20, 6
+/*0000000029b8*/ v_alignbit_b32  v23, v20, v20, 11
+/*0000000029c0*/ v_xor_b32       v21, v21, v23
+/*0000000029c4*/ v_alignbit_b32  v23, v20, v20, 25
+/*0000000029cc*/ v_xor_b32       v21, v21, v23
+/*0000000029d0*/ v_bfi_b32       v23, v20, v37, v34
+/*0000000029d8*/ v_add_u32       v23, vcc, v23, v26
+/*0000000029dc*/ v_add_u32       v21, vcc, v23, v21
+/*0000000029e0*/ v_alignbit_b32  v23, v15, v15, 2
+/*0000000029e8*/ v_alignbit_b32  v24, v15, v15, 13
+/*0000000029f0*/ v_xor_b32       v23, v23, v24
+/*0000000029f4*/ v_alignbit_b32  v24, v15, v15, 22
+/*0000000029fc*/ v_xor_b32       v23, v23, v24
+/*000000002a00*/ v_xor_b32       v24, v39, v36
+/*000000002a04*/ v_and_b32       v24, v24, v15
+/*000000002a08*/ v_and_b32       v26, v39, v36
+/*000000002a0c*/ v_xor_b32       v24, v24, v26
+/*000000002a10*/ v_add_u32       v21, vcc, v21, v18
+/*000000002a14*/ v_add_u32       v23, vcc, v23, v24
+/*000000002a18*/ v_add_u32       v21, vcc, s74, v21
+/*000000002a1c*/ v_add_u32       v24, vcc, v21, v32
+/*000000002a20*/ v_add_u32       v21, vcc, v23, v21
+/*000000002a24*/ v_alignbit_b32  v23, v12, v12, 17
+/*000000002a2c*/ v_alignbit_b32  v26, v12, v12, 19
+/*000000002a34*/ v_xor_b32       v23, v23, v26
+/*000000002a38*/ v_lshrrev_b32   v26, 10, v12
+/*000000002a3c*/ v_xor_b32       v23, v23, v26
+/*000000002a40*/ v_alignbit_b32  v26, v19, v19, 7
+/*000000002a48*/ v_alignbit_b32  v27, v19, v19, 18
+/*000000002a50*/ v_add_u32       v23, vcc, v23, v35
+/*000000002a54*/ v_xor_b32       v26, v26, v27
+/*000000002a58*/ v_lshrrev_b32   v27, 3, v19
+/*000000002a5c*/ v_xor_b32       v26, v26, v27
+/*000000002a60*/ v_add_u32       v23, vcc, v23, v16
+/*000000002a64*/ v_add_u32       v23, vcc, v23, v26
+/*000000002a68*/ v_alignbit_b32  v26, v24, v24, 6
+/*000000002a70*/ v_alignbit_b32  v27, v24, v24, 11
+/*000000002a78*/ v_xor_b32       v26, v26, v27
+/*000000002a7c*/ v_alignbit_b32  v27, v24, v24, 25
+/*000000002a84*/ v_xor_b32       v26, v26, v27
+/*000000002a88*/ v_bfi_b32       v27, v24, v20, v37
+/*000000002a90*/ v_add_u32       v27, vcc, v27, v34
+/*000000002a94*/ v_add_u32       v26, vcc, v27, v26
+/*000000002a98*/ v_alignbit_b32  v27, v21, v21, 2
+/*000000002aa0*/ v_alignbit_b32  v30, v21, v21, 13
+/*000000002aa8*/ v_xor_b32       v27, v27, v30
+/*000000002aac*/ v_alignbit_b32  v30, v21, v21, 22
+/*000000002ab4*/ v_xor_b32       v27, v27, v30
+/*000000002ab8*/ v_xor_b32       v30, v15, v39
+/*000000002abc*/ v_and_b32       v30, v21, v30
+/*000000002ac0*/ v_and_b32       v32, v15, v39
+/*000000002ac4*/ v_xor_b32       v30, v30, v32
+/*000000002ac8*/ v_add_u32       v26, vcc, v26, v23
+/*000000002acc*/ v_add_u32       v27, vcc, v27, v30
+/*000000002ad0*/ v_add_u32       v26, vcc, s75, v26
+/*000000002ad4*/ v_add_u32       v30, vcc, v26, v36
+/*000000002ad8*/ v_add_u32       v26, vcc, v27, v26
+/*000000002adc*/ v_alignbit_b32  v27, v18, v18, 17
+/*000000002ae4*/ v_alignbit_b32  v32, v18, v18, 19
+/*000000002aec*/ v_xor_b32       v27, v27, v32
+/*000000002af0*/ v_lshrrev_b32   v32, 10, v18
+/*000000002af4*/ v_xor_b32       v27, v27, v32
+/*000000002af8*/ v_alignbit_b32  v32, v22, v22, 7
+/*000000002b00*/ v_alignbit_b32  v33, v22, v22, 18
+/*000000002b08*/ v_add_u32       v27, vcc, v27, v38
+/*000000002b0c*/ v_xor_b32       v32, v32, v33
+/*000000002b10*/ v_lshrrev_b32   v33, 3, v22
+/*000000002b14*/ v_xor_b32       v32, v32, v33
+/*000000002b18*/ v_add_u32       v27, vcc, v27, v19
+/*000000002b1c*/ v_add_u32       v27, vcc, v27, v32
+/*000000002b20*/ v_alignbit_b32  v33, v30, v30, 6
+/*000000002b28*/ v_alignbit_b32  v32, v30, v30, 11
+/*000000002b30*/ v_xor_b32       v32, v33, v32
+/*000000002b34*/ v_alignbit_b32  v33, v30, v30, 25
+/*000000002b3c*/ v_xor_b32       v32, v32, v33
+/*000000002b40*/ v_bfi_b32       v33, v30, v24, v20
+/*000000002b48*/ v_add_u32       v33, vcc, v33, v37
+/*000000002b4c*/ v_add_u32       v32, vcc, v33, v32
+/*000000002b50*/ v_alignbit_b32  v34, v26, v26, 2
+/*000000002b58*/ v_alignbit_b32  v33, v26, v26, 13
+/*000000002b60*/ v_xor_b32       v36, v21, v15
+/*000000002b64*/ buffer_store_dword v35, v0, s[0:3], 0 offset:204
+/*000000002b6c*/ buffer_store_dword v38, v0, s[0:3], 0 offset:208
+/*000000002b74*/ buffer_store_dword v40, v0, s[0:3], 0 offset:212
+/*000000002b7c*/ buffer_store_dword v41, v0, s[0:3], 0 offset:216
+/*000000002b84*/ buffer_store_dword v42, v0, s[0:3], 0 offset:220
+/*000000002b8c*/ buffer_store_dword v12, v0, s[0:3], 0 offset:224
+/*000000002b94*/ buffer_store_dword v29, v0, s[0:3], 0 offset:200
+/*000000002b9c*/ buffer_store_dword v17, v0, s[0:3], 0 offset:196
+/*000000002ba4*/ buffer_store_dword v13, v0, s[0:3], 0 offset:164
+/*000000002bac*/ buffer_store_dword v16, v0, s[0:3], 0 offset:168
+/*000000002bb4*/ buffer_store_dword v19, v0, s[0:3], 0 offset:172
+/*000000002bbc*/ buffer_store_dword v22, v0, s[0:3], 0 offset:176
+/*000000002bc4*/ buffer_store_dword v25, v0, s[0:3], 0 offset:180
+/*000000002bcc*/ buffer_store_dword v28, v0, s[0:3], 0 offset:184
+/*000000002bd4*/ buffer_store_dword v31, v0, s[0:3], 0 offset:188
+/*000000002bdc*/ buffer_store_dword v14, v0, s[0:3], 0 offset:192
+/*000000002be4*/ v_xor_b32       v33, v34, v33
+/*000000002be8*/ v_alignbit_b32  v34, v26, v26, 22
+/*000000002bf0*/ v_and_b32       v37, v21, v15
+/*000000002bf4*/ v_and_b32       v16, v36, v26
+/*000000002bf8*/ v_add_u32       v13, vcc, v32, v27
+/*000000002bfc*/ v_xor_b32       v19, v33, v34
+/*000000002c00*/ v_xor_b32       v16, v16, v37
+/*000000002c04*/ v_add_u32       v13, vcc, s76, v13
+/*000000002c08*/ v_add_u32       v16, vcc, v19, v16
+/*000000002c0c*/ v_add_u32       v19, vcc, v13, v39
+/*000000002c10*/ v_add_u32       v13, vcc, v16, v13
+/*000000002c14*/ v_alignbit_b32  v16, v23, v23, 17
+/*000000002c1c*/ v_alignbit_b32  v29, v23, v23, 19
+/*000000002c24*/ v_xor_b32       v16, v16, v29
+/*000000002c28*/ v_lshrrev_b32   v29, 10, v23
+/*000000002c2c*/ v_xor_b32       v16, v16, v29
+/*000000002c30*/ v_alignbit_b32  v29, v25, v25, 7
+/*000000002c38*/ v_alignbit_b32  v32, v25, v25, 18
+/*000000002c40*/ v_add_u32       v16, vcc, v16, v40
+/*000000002c44*/ v_xor_b32       v29, v29, v32
+/*000000002c48*/ v_lshrrev_b32   v32, 3, v25
+/*000000002c4c*/ v_xor_b32       v29, v29, v32
+/*000000002c50*/ v_add_u32       v16, vcc, v16, v22
+/*000000002c54*/ v_add_u32       v16, vcc, v16, v29
+/*000000002c58*/ v_alignbit_b32  v22, v19, v19, 6
+/*000000002c60*/ v_alignbit_b32  v29, v19, v19, 11
+/*000000002c68*/ v_xor_b32       v22, v22, v29
+/*000000002c6c*/ v_alignbit_b32  v29, v19, v19, 25
+/*000000002c74*/ v_xor_b32       v22, v22, v29
+/*000000002c78*/ v_bfi_b32       v29, v19, v30, v24
+/*000000002c80*/ v_add_u32       v20, vcc, v29, v20
+/*000000002c84*/ v_add_u32       v20, vcc, v20, v22
+/*000000002c88*/ v_alignbit_b32  v22, v13, v13, 2
+/*000000002c90*/ v_alignbit_b32  v29, v13, v13, 13
+/*000000002c98*/ v_xor_b32       v22, v22, v29
+/*000000002c9c*/ v_alignbit_b32  v29, v13, v13, 22
+/*000000002ca4*/ v_xor_b32       v22, v22, v29
+/*000000002ca8*/ v_xor_b32       v29, v26, v21
+/*000000002cac*/ v_and_b32       v29, v13, v29
+/*000000002cb0*/ v_and_b32       v32, v26, v21
+/*000000002cb4*/ v_add_u32       v20, vcc, v20, v16
+/*000000002cb8*/ v_xor_b32       v29, v29, v32
+/*000000002cbc*/ v_add_u32       v20, vcc, s77, v20
+/*000000002cc0*/ v_add_u32       v22, vcc, v22, v29
+/*000000002cc4*/ v_add_u32       v15, vcc, v20, v15
+/*000000002cc8*/ v_add_u32       v20, vcc, v22, v20
+/*000000002ccc*/ v_alignbit_b32  v22, v27, v27, 17
+/*000000002cd4*/ v_alignbit_b32  v29, v27, v27, 19
+/*000000002cdc*/ v_xor_b32       v22, v22, v29
+/*000000002ce0*/ v_lshrrev_b32   v29, 10, v27
+/*000000002ce4*/ v_xor_b32       v22, v22, v29
+/*000000002ce8*/ v_alignbit_b32  v29, v28, v28, 7
+/*000000002cf0*/ v_alignbit_b32  v32, v28, v28, 18
+/*000000002cf8*/ v_add_u32       v22, vcc, v22, v41
+/*000000002cfc*/ v_xor_b32       v29, v29, v32
+/*000000002d00*/ v_lshrrev_b32   v32, 3, v28
+/*000000002d04*/ v_xor_b32       v29, v29, v32
+/*000000002d08*/ v_add_u32       v22, vcc, v22, v25
+/*000000002d0c*/ v_add_u32       v22, vcc, v22, v29
+/*000000002d10*/ v_alignbit_b32  v25, v15, v15, 6
+/*000000002d18*/ v_alignbit_b32  v29, v15, v15, 11
+/*000000002d20*/ v_xor_b32       v25, v25, v29
+/*000000002d24*/ v_alignbit_b32  v29, v15, v15, 25
+/*000000002d2c*/ v_xor_b32       v25, v25, v29
+/*000000002d30*/ v_bfi_b32       v29, v15, v19, v30
+/*000000002d38*/ v_add_u32       v24, vcc, v29, v24
+/*000000002d3c*/ v_add_u32       v24, vcc, v24, v25
+/*000000002d40*/ v_alignbit_b32  v25, v20, v20, 2
+/*000000002d48*/ v_alignbit_b32  v29, v20, v20, 13
+/*000000002d50*/ v_xor_b32       v25, v25, v29
+/*000000002d54*/ v_alignbit_b32  v29, v20, v20, 22
+/*000000002d5c*/ v_xor_b32       v25, v25, v29
+/*000000002d60*/ v_xor_b32       v29, v13, v26
+/*000000002d64*/ v_and_b32       v29, v29, v20
+/*000000002d68*/ v_and_b32       v32, v13, v26
+/*000000002d6c*/ v_add_u32       v24, vcc, v24, v22
+/*000000002d70*/ v_xor_b32       v29, v29, v32
+/*000000002d74*/ v_add_u32       v24, vcc, s78, v24
+/*000000002d78*/ v_add_u32       v25, vcc, v25, v29
+/*000000002d7c*/ v_add_u32       v21, vcc, v24, v21
+/*000000002d80*/ v_add_u32       v24, vcc, v25, v24
+/*000000002d84*/ v_alignbit_b32  v25, v16, v16, 17
+/*000000002d8c*/ v_alignbit_b32  v29, v16, v16, 19
+/*000000002d94*/ v_xor_b32       v25, v25, v29
+/*000000002d98*/ v_lshrrev_b32   v29, 10, v16
+/*000000002d9c*/ v_xor_b32       v25, v25, v29
+/*000000002da0*/ v_alignbit_b32  v29, v31, v31, 7
+/*000000002da8*/ v_alignbit_b32  v32, v31, v31, 18
+/*000000002db0*/ v_add_u32       v25, vcc, v25, v42
+/*000000002db4*/ v_xor_b32       v29, v29, v32
+/*000000002db8*/ v_lshrrev_b32   v32, 3, v31
+/*000000002dbc*/ v_xor_b32       v29, v29, v32
+/*000000002dc0*/ v_add_u32       v25, vcc, v25, v28
+/*000000002dc4*/ v_add_u32       v25, vcc, v25, v29
+/*000000002dc8*/ v_alignbit_b32  v28, v21, v21, 6
+/*000000002dd0*/ v_alignbit_b32  v29, v21, v21, 11
+/*000000002dd8*/ v_xor_b32       v28, v28, v29
+/*000000002ddc*/ v_alignbit_b32  v29, v21, v21, 25
+/*000000002de4*/ v_xor_b32       v28, v28, v29
+/*000000002de8*/ v_bfi_b32       v29, v21, v15, v19
+/*000000002df0*/ v_add_u32       v29, vcc, v29, v30
+/*000000002df4*/ v_add_u32       v28, vcc, v29, v28
+/*000000002df8*/ v_alignbit_b32  v29, v24, v24, 2
+/*000000002e00*/ v_alignbit_b32  v30, v24, v24, 13
+/*000000002e08*/ v_xor_b32       v29, v29, v30
+/*000000002e0c*/ v_alignbit_b32  v30, v24, v24, 22
+/*000000002e14*/ v_xor_b32       v29, v29, v30
+/*000000002e18*/ v_xor_b32       v30, v20, v13
+/*000000002e1c*/ v_and_b32       v30, v24, v30
+/*000000002e20*/ v_and_b32       v32, v20, v13
+/*000000002e24*/ v_add_u32       v28, vcc, v28, v25
+/*000000002e28*/ v_xor_b32       v30, v30, v32
+/*000000002e2c*/ v_add_u32       v28, vcc, s79, v28
+/*000000002e30*/ v_add_u32       v29, vcc, v29, v30
+/*000000002e34*/ v_add_u32       v26, vcc, v28, v26
+/*000000002e38*/ v_add_u32       v28, vcc, v29, v28
+/*000000002e3c*/ v_alignbit_b32  v29, v22, v22, 17
+/*000000002e44*/ v_alignbit_b32  v30, v22, v22, 19
+/*000000002e4c*/ v_xor_b32       v29, v29, v30
+/*000000002e50*/ v_lshrrev_b32   v30, 10, v22
+/*000000002e54*/ v_xor_b32       v29, v29, v30
+/*000000002e58*/ v_add_u32       v12, vcc, v29, v12
+/*000000002e5c*/ v_alignbit_b32  v29, v14, v14, 7
+/*000000002e64*/ v_alignbit_b32  v30, v14, v14, 18
+/*000000002e6c*/ v_xor_b32       v29, v29, v30
+/*000000002e70*/ v_lshrrev_b32   v30, 3, v14
+/*000000002e74*/ v_xor_b32       v29, v29, v30
+/*000000002e78*/ v_add_u32       v12, vcc, v12, v31
+/*000000002e7c*/ v_add_u32       v12, vcc, v12, v29
+/*000000002e80*/ v_alignbit_b32  v29, v26, v26, 6
+/*000000002e88*/ v_alignbit_b32  v30, v26, v26, 11
+/*000000002e90*/ v_xor_b32       v29, v29, v30
+/*000000002e94*/ v_alignbit_b32  v30, v26, v26, 25
+/*000000002e9c*/ v_xor_b32       v29, v29, v30
+/*000000002ea0*/ v_bfi_b32       v30, v26, v21, v15
+/*000000002ea8*/ v_add_u32       v19, vcc, v30, v19
+/*000000002eac*/ v_add_u32       v19, vcc, v19, v29
+/*000000002eb0*/ v_alignbit_b32  v29, v28, v28, 2
+/*000000002eb8*/ v_alignbit_b32  v30, v28, v28, 13
+/*000000002ec0*/ v_xor_b32       v29, v29, v30
+/*000000002ec4*/ v_alignbit_b32  v30, v28, v28, 22
+/*000000002ecc*/ v_xor_b32       v29, v29, v30
+/*000000002ed0*/ v_xor_b32       v30, v24, v20
+/*000000002ed4*/ v_and_b32       v30, v30, v28
+/*000000002ed8*/ v_and_b32       v31, v24, v20
+/*000000002edc*/ v_add_u32       v19, vcc, v19, v12
+/*000000002ee0*/ v_xor_b32       v30, v30, v31
+/*000000002ee4*/ v_add_u32       v19, vcc, s80, v19
+/*000000002ee8*/ v_add_u32       v29, vcc, v29, v30
+/*000000002eec*/ v_add_u32       v30, vcc, v19, v13
+/*000000002ef0*/ v_add_u32       v13, vcc, v29, v19
+/*000000002ef4*/ v_alignbit_b32  v19, v25, v25, 17
+/*000000002efc*/ v_alignbit_b32  v29, v25, v25, 19
+/*000000002f04*/ v_xor_b32       v19, v19, v29
+/*000000002f08*/ v_lshrrev_b32   v29, 10, v25
+/*000000002f0c*/ v_xor_b32       v19, v19, v29
+/*000000002f10*/ v_alignbit_b32  v29, v17, v17, 7
+/*000000002f18*/ v_alignbit_b32  v31, v17, v17, 18
+/*000000002f20*/ v_add_u32       v19, vcc, v19, v18
+/*000000002f24*/ v_xor_b32       v29, v29, v31
+/*000000002f28*/ v_lshrrev_b32   v17, 3, v17
+/*000000002f2c*/ v_xor_b32       v17, v29, v17
+/*000000002f30*/ v_add_u32       v14, vcc, v19, v14
+/*000000002f34*/ v_add_u32       v14, vcc, v14, v17
+/*000000002f38*/ buffer_store_dword v18, v0, s[0:3], 0 offset:228
+/*000000002f40*/ buffer_store_dword v23, v0, s[0:3], 0 offset:232
+/*000000002f48*/ buffer_store_dword v27, v0, s[0:3], 0 offset:236
+/*000000002f50*/ buffer_store_dword v16, v0, s[0:3], 0 offset:240
+/*000000002f58*/ buffer_store_dword v22, v0, s[0:3], 0 offset:244
+/*000000002f60*/ buffer_store_dword v25, v0, s[0:3], 0 offset:248
+/*000000002f68*/ buffer_store_dword v12, v0, s[0:3], 0 offset:252
+/*000000002f70*/ buffer_store_dword v14, v0, s[0:3], 0 offset:256
+/*000000002f78*/ v_alignbit_b32  v12, v30, v30, 6
+/*000000002f80*/ v_alignbit_b32  v16, v30, v30, 11
+/*000000002f88*/ v_xor_b32       v12, v12, v16
+/*000000002f8c*/ v_alignbit_b32  v16, v30, v30, 25
+/*000000002f94*/ v_xor_b32       v12, v12, v16
+/*000000002f98*/ v_bfi_b32       v16, v30, v26, v21
+/*000000002fa0*/ v_add_u32       v15, vcc, v16, v15
+/*000000002fa4*/ v_add_u32       v12, vcc, v15, v12
+/*000000002fa8*/ v_add_u32       v12, vcc, v12, v14
+/*000000002fac*/ v_alignbit_b32  v14, v13, v13, 2
+/*000000002fb4*/ v_alignbit_b32  v15, v13, v13, 13
+/*000000002fbc*/ v_xor_b32       v14, v14, v15
+/*000000002fc0*/ v_alignbit_b32  v15, v13, v13, 22
+/*000000002fc8*/ v_xor_b32       v14, v14, v15
+/*000000002fcc*/ v_xor_b32       v15, v28, v24
+/*000000002fd0*/ v_and_b32       v15, v13, v15
+/*000000002fd4*/ v_and_b32       v16, v28, v24
+/*000000002fd8*/ v_xor_b32       v15, v15, v16
+/*000000002fdc*/ v_add_u32       v12, vcc, s81, v12
+/*000000002fe0*/ v_add_u32       v14, vcc, v14, v15
+/*000000002fe4*/ v_add_u32       v15, vcc, v12, v20
+/*000000002fe8*/ v_add_u32       v12, vcc, v14, v12
+/*000000002fec*/ v_add_u32       v0, vcc, v12, v0
+/*000000002ff0*/ v_add_u32       v1, vcc, v13, v1
+/*000000002ff4*/ v_mov_b32       v13, s5
+/*000000002ff8*/ v_add_u32       v2, vcc, v28, v2
+/*000000002ffc*/ v_add_u32       v3, vcc, v24, v3
+/*000000003000*/ v_mov_b32       v12, s4
+/*000000003004*/ flat_store_dwordx4 v[12:13], v[0:3]
+/*00000000300c*/ v_mov_b32       v13, s9
+/*000000003010*/ v_add_u32       v4, vcc, v15, v4
+/*000000003014*/ v_add_u32       v5, vcc, v30, v5
+/*000000003018*/ v_add_u32       v6, vcc, v26, v6
+/*00000000301c*/ v_add_u32       v7, vcc, v21, v7
+/*000000003020*/ v_mov_b32       v12, s8
+/*000000003024*/ flat_store_dwordx4 v[12:13], v[4:7]
+/*00000000302c*/ s_cbranch_scc1  .L13556_0
+.L12336_0:
+/*000000003030*/ s_lshl_b32      s84, s82, 6
+/*000000003034*/ s_sub_i32       s83, s6, s84
+/*000000003038*/ s_min_u32       s83, s83, 64
+/*00000000303c*/ s_cmp_gt_u32    s6, s84
+/*000000003040*/ s_cselect_b32   s83, s83, -1
+/*000000003044*/ s_cmp_lt_i32    s83, 1
+/*000000003048*/ s_mov_b64       s[86:87], -1
+/*00000000304c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:4
+/*000000003054*/ buffer_store_dword v8, v0, s[0:3], 0 offset:8
+/*00000000305c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:12
+/*000000003064*/ buffer_store_dword v8, v0, s[0:3], 0 offset:16
+/*00000000306c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:20
+/*000000003074*/ buffer_store_dword v8, v0, s[0:3], 0 offset:24
+/*00000000307c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:28
+/*000000003084*/ buffer_store_dword v8, v0, s[0:3], 0 offset:32
+/*00000000308c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:36
+/*000000003094*/ buffer_store_dword v8, v0, s[0:3], 0 offset:40
+/*00000000309c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:44
+/*0000000030a4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:48
+/*0000000030ac*/ buffer_store_dword v8, v0, s[0:3], 0 offset:52
+/*0000000030b4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:56
+/*0000000030bc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:60
+/*0000000030c4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:64
+/*0000000030cc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:68
+/*0000000030d4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:72
+/*0000000030dc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:76
+/*0000000030e4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:80
+/*0000000030ec*/ buffer_store_dword v8, v0, s[0:3], 0 offset:84
+/*0000000030f4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:88
+/*0000000030fc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:92
+/*000000003104*/ buffer_store_dword v8, v0, s[0:3], 0 offset:96
+/*00000000310c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:100
+/*000000003114*/ buffer_store_dword v8, v0, s[0:3], 0 offset:104
+/*00000000311c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:108
+/*000000003124*/ buffer_store_dword v8, v0, s[0:3], 0 offset:112
+/*00000000312c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:116
+/*000000003134*/ buffer_store_dword v8, v0, s[0:3], 0 offset:120
+/*00000000313c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:124
+/*000000003144*/ buffer_store_dword v8, v0, s[0:3], 0 offset:128
+/*00000000314c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:132
+/*000000003154*/ buffer_store_dword v8, v0, s[0:3], 0 offset:136
+/*00000000315c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:140
+/*000000003164*/ buffer_store_dword v8, v0, s[0:3], 0 offset:144
+/*00000000316c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:148
+/*000000003174*/ buffer_store_dword v8, v0, s[0:3], 0 offset:152
+/*00000000317c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:156
+/*000000003184*/ buffer_store_dword v8, v0, s[0:3], 0 offset:160
+/*00000000318c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:164
+/*000000003194*/ buffer_store_dword v8, v0, s[0:3], 0 offset:168
+/*00000000319c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:172
+/*0000000031a4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:176
+/*0000000031ac*/ buffer_store_dword v8, v0, s[0:3], 0 offset:180
+/*0000000031b4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:184
+/*0000000031bc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:188
+/*0000000031c4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:192
+/*0000000031cc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:196
+/*0000000031d4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:200
+/*0000000031dc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:204
+/*0000000031e4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:208
+/*0000000031ec*/ buffer_store_dword v8, v0, s[0:3], 0 offset:212
+/*0000000031f4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:216
+/*0000000031fc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:220
+/*000000003204*/ buffer_store_dword v8, v0, s[0:3], 0 offset:224
+/*00000000320c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:228
+/*000000003214*/ buffer_store_dword v8, v0, s[0:3], 0 offset:232
+/*00000000321c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:236
+/*000000003224*/ buffer_store_dword v8, v0, s[0:3], 0 offset:240
+/*00000000322c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:244
+/*000000003234*/ buffer_store_dword v8, v0, s[0:3], 0 offset:248
+/*00000000323c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:252
+/*000000003244*/ buffer_store_dword v8, v0, s[0:3], 0 offset:256
+/*00000000324c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:260
+/*000000003254*/ buffer_store_dword v8, v0, s[0:3], 0 offset:264
+/*00000000325c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:268
+/*000000003264*/ buffer_store_dword v8, v0, s[0:3], 0 offset:272
+/*00000000326c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:276
+/*000000003274*/ buffer_store_dword v8, v0, s[0:3], 0 offset:280
+/*00000000327c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:284
+/*000000003284*/ buffer_store_dword v8, v0, s[0:3], 0 offset:288
+/*00000000328c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:292
+/*000000003294*/ buffer_store_dword v8, v0, s[0:3], 0 offset:296
+/*00000000329c*/ buffer_store_dword v8, v0, s[0:3], 0 offset:300
+/*0000000032a4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:304
+/*0000000032ac*/ buffer_store_dword v8, v0, s[0:3], 0 offset:308
+/*0000000032b4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:312
+/*0000000032bc*/ buffer_store_dword v8, v0, s[0:3], 0 offset:316
+/*0000000032c4*/ buffer_store_dword v8, v0, s[0:3], 0 offset:320
+/*0000000032cc*/ s_cbranch_scc0  .L13048_0
+/*0000000032d0*/ s_cmp_gt_i32    s83, -1
+/*0000000032d4*/ s_cbranch_scc1  .L13044_0
+/*0000000032d8*/ s_andn2_b64     vcc, exec, s[14:15]
+/*0000000032dc*/ s_cbranch_vccnz .L13032_0
+/*0000000032e0*/ buffer_store_dword v9, v0, s[0:3], 0 offset:4
+.L13032_0:
+/*0000000032e8*/ v_mov_b32       v12, s13
+/*0000000032ec*/ buffer_store_dword v12, v0, s[0:3], 0 offset:64
+.L13044_0:
+/*0000000032f4*/ s_mov_b64       s[86:87], 0
+.L13048_0:
+/*0000000032f8*/ s_andn2_b64     vcc, exec, s[86:87]
+/*0000000032fc*/ s_cbranch_vccnz .L992_0
+/*000000003300*/ s_lshr_b32      s85, s83, 2
+/*000000003304*/ s_cmp_eq_u32    s85, 0
+/*000000003308*/ s_cbranch_scc1  .L13176_0
+/*00000000330c*/ s_ashr_i32      s87, s12, 31
+/*000000003310*/ s_add_u32       s86, s10, s12
+/*000000003314*/ s_addc_u32      s87, s11, s87
+/*000000003318*/ v_mov_b32       v12, 4
+/*00000000331c*/ s_mov_b32       s88, s85
+.L13088_0:
+/*000000003320*/ v_mov_b32       v13, s86
+/*000000003324*/ v_mov_b32       v14, s87
+/*000000003328*/ flat_load_dword v13, v[13:14]
+/*000000003330*/ s_add_i32       s88, s88, -1
+/*000000003334*/ s_add_u32       s86, s86, 4
+/*000000003338*/ s_addc_u32      s87, s87, 0
+/*00000000333c*/ s_cmp_lg_u32    s88, 0
+/*000000003340*/ s_waitcnt       vmcnt(0) & lgkmcnt(0)
+/*000000003344*/ v_lshlrev_b32   v16, 8, v13
+/*000000003348*/ v_lshlrev_b32   v15, 24, v13
+/*00000000334c*/ v_and_b32       v16, s16, v16
+/*000000003350*/ v_lshlrev_b32   v14, v11, v13 src1_sel:byte2
+/*000000003358*/ v_or_b32        v15, v16, v15
+/*00000000335c*/ v_or_b32        v14, v15, v14
+/*000000003360*/ v_or_b32        v13, v14, v13 src1_sel:byte3
+/*000000003368*/ buffer_store_dword v13, v12, s[0:3], 0 offen
+/*000000003370*/ v_add_u32       v12, vcc, 4, v12
+/*000000003374*/ s_cbranch_scc1  .L13088_0
+.L13176_0:
+/*000000003378*/ s_and_b32       s86, s83, 3
+/*00000000337c*/ s_cmp_lt_i32    s86, 2
+/*000000003380*/ s_mov_b64       s[88:89], -1
+/*000000003384*/ s_cbranch_scc1  .L13416_0
+/*000000003388*/ s_cmp_gt_i32    s86, 2
+/*00000000338c*/ s_mov_b64       s[88:89], -1
+/*000000003390*/ s_cbranch_scc0  .L13324_0
+/*000000003394*/ s_and_b32       s87, s83, -4
+/*000000003398*/ s_add_i32       s87, s87, s84
+/*00000000339c*/ s_ashr_i32      s89, s87, 31
+/*0000000033a0*/ s_add_u32       s88, s10, s87
+/*0000000033a4*/ s_addc_u32      s89, s11, s89
+/*0000000033a8*/ s_add_u32       s90, s88, 2
+/*0000000033ac*/ v_mov_b32       v12, s88
+/*0000000033b0*/ s_addc_u32      s91, s89, 0
+/*0000000033b4*/ v_mov_b32       v13, s89
+/*0000000033b8*/ v_mov_b32       v14, s90
+/*0000000033bc*/ v_mov_b32       v15, s91
+/*0000000033c0*/ flat_load_ushort v12, v[12:13]
+/*0000000033c8*/ flat_load_ubyte v13, v[14:15]
+/*0000000033d0*/ s_lshl_b32      s87, s85, 2
+/*0000000033d4*/ s_mov_b64       s[88:89], 0
+/*0000000033d8*/ v_add_u32       v14, vcc, s87, v10
+/*0000000033dc*/ s_waitcnt       vmcnt(1) & lgkmcnt(1)
+/*0000000033e0*/ v_lshlrev_b32   v15, 24, v12
+/*0000000033e4*/ v_lshlrev_b32   v12, 8, v12
+/*0000000033e8*/ v_and_b32       v12, s16, v12
+/*0000000033ec*/ s_waitcnt       vmcnt(0) & lgkmcnt(0)
+/*0000000033f0*/ v_lshlrev_b32   v13, 8, v13
+/*0000000033f4*/ v_or_b32        v12, v15, v12
+/*0000000033f8*/ v_or_b32        v12, v12, v13
+/*0000000033fc*/ v_or_b32        v12, 0x80, v12
+/*000000003404*/ buffer_store_dword v12, v14, s[0:3], 0 offen
+.L13324_0:
+/*00000000340c*/ s_andn2_b64     vcc, exec, s[88:89]
+/*000000003410*/ s_cbranch_vccnz .L13412_0
+/*000000003414*/ s_and_b32       s87, s83, -4
+/*000000003418*/ s_add_i32       s87, s87, s84
+/*00000000341c*/ s_ashr_i32      s89, s87, 31
+/*000000003420*/ s_add_u32       s88, s10, s87
+/*000000003424*/ s_addc_u32      s89, s11, s89
+/*000000003428*/ v_mov_b32       v12, s88
+/*00000000342c*/ v_mov_b32       v13, s89
+/*000000003430*/ flat_load_ushort v12, v[12:13]
+/*000000003438*/ s_lshl_b32      s87, s85, 2
+/*00000000343c*/ v_add_u32       v14, vcc, s87, v10
+/*000000003440*/ s_waitcnt       vmcnt(0) & lgkmcnt(0)
+/*000000003444*/ v_lshrrev_b16   v13, 8, v12
+/*000000003448*/ v_lshlrev_b32   v12, 24, v12
+/*00000000344c*/ v_lshlrev_b32   v13, 16, v13
+/*000000003450*/ v_or_b32        v12, v12, v13
+/*000000003454*/ v_or_b32        v12, 0x8000, v12
+/*00000000345c*/ buffer_store_dword v12, v14, s[0:3], 0 offen
+.L13412_0:
+/*000000003464*/ s_mov_b64       s[88:89], 0
+.L13416_0:
+/*000000003468*/ s_andn2_b64     vcc, exec, s[88:89]
+/*00000000346c*/ s_cbranch_vccnz .L13532_0
+/*000000003470*/ s_cmp_lg_u32    s86, 1
+/*000000003474*/ s_mov_b64       s[86:87], -1
+/*000000003478*/ s_cbranch_scc0  .L13456_0
+/*00000000347c*/ s_lshl_b32      s86, s85, 2
+/*000000003480*/ v_add_u32       v12, vcc, s86, v10
+/*000000003484*/ buffer_store_dword v9, v12, s[0:3], 0 offen
+/*00000000348c*/ s_mov_b64       s[86:87], 0
+.L13456_0:
+/*000000003490*/ s_and_b64       vcc, exec, s[86:87]
+/*000000003494*/ s_cbranch_vccz  .L13532_0
+/*000000003498*/ s_and_b32       s86, s83, -4
+/*00000000349c*/ s_add_i32       s86, s86, s84
+/*0000000034a0*/ s_ashr_i32      s84, s86, 31
+/*0000000034a4*/ s_add_u32       s86, s10, s86
+/*0000000034a8*/ s_addc_u32      s87, s11, s84
+/*0000000034ac*/ v_mov_b32       v12, s86
+/*0000000034b0*/ v_mov_b32       v13, s87
+/*0000000034b4*/ flat_load_ubyte v12, v[12:13]
+/*0000000034bc*/ s_lshl_b32      s84, s85, 2
+/*0000000034c0*/ v_add_u32       v13, vcc, s84, v10
+/*0000000034c4*/ s_waitcnt       vmcnt(0) & lgkmcnt(0)
+/*0000000034c8*/ v_lshlrev_b32   v12, 24, v12
+/*0000000034cc*/ v_or_b32        v12, 0x800000, v12
+/*0000000034d4*/ buffer_store_dword v12, v13, s[0:3], 0 offen
+.L13532_0:
+/*0000000034dc*/ s_cmp_gt_i32    s83, 55
+/*0000000034e0*/ s_cbranch_scc1  .L992_0
+/*0000000034e4*/ v_mov_b32       v12, s13
+/*0000000034e8*/ buffer_store_dword v12, v0, s[0:3], 0 offset:64
+/*0000000034f0*/ s_branch        .L992_0
+.L13556_0:
+/*0000000034f4*/ s_endpgm
